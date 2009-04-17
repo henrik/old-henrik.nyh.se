@@ -1,0 +1,15 @@
+--- 
+wordpress_id: 207
+title: Lambda
+tags: 
+- Ruby
+---
+Teehee:
+
+{% highlight ruby %}
+module Kernel
+  alias_method "λ", :lambda
+end
+
+send("λ") { puts "w00t" }.call
+{% endhighlight %}

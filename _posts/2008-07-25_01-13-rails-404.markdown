@@ -1,0 +1,75 @@
+--- 
+wordpress_id: 239
+title: Custom 404 action in Rails
+tags: 
+- Ruby
+- Ruby on Rails
+---
+By default, Rails will render <code>public/404.html</code> (with a 404 status in the header) when it thinks an error 404 is appropriate.
+
+<h4>Why use a custom action?</h4>
+
+For error 500 (Internal Server Error) pages, rendering a static file makes sense. If your app is broken enough to give that error, it may not be up to the task of rendering a dynamic error page.
+
+But for 404 pages, a dynamic template might be preferable. You can use your site layouts (though some would argue error pages should look distinctly different) and helpers, you can suggest alternative content or try to figure out where they wanted to go, and so on.
+
+<!--more-->
+
+Note that even when your 404 page is a static HTML file, it is still rendered by Rails (after failing to match a route, or some other error), so replacing it with a dynamic action adds less overhead than you might assume.
+
+<h4>Old school: Overriding <code>rescue_action</code></h4>
+
+Blog posts on the subject that I found (like <a href="http://coderkitty.sweetperceptions.com/2008/7/6/meaningful-404s-and-500s">this one</a>) suggest overriding <code>rescue_action(_in_public)</code>.
+
+If you go that route (or a similar one using the new-fangled <a href="http://ryandaigle.com/articles/2007/9/24/what-s-new-in-edge-rails-better-exception-handling"><code>rescue_from</code></a>), these are the errors that Rails by default would render <code>public/404.html</code> for:
+
+{% highlight text %}
+ActionController::RoutingError
+ActionController::UnknownAction
+ActiveRecord::RecordNotFound
+{% endhighlight %}
+
+They are enumerated in <a href="http://github.com/rails/rails/tree/v2.1.0/actionpack/lib/action_controller/rescue.rb#L16-18"><code>ActionController::Rescue</code></a>.
+
+<h4>New school: Change it at the source</h4>
+
+I wanted to know <em>exactly</em> when Rails was rendering <code>public/404.html</code>, not just rescue some exceptions that I had noticed led to a 404 in production, so I dug into the code – hence the list above.
+
+In short, <a href="http://github.com/rails/rails/tree/v2.1.0/actionpack/lib/action_controller/rescue.rb"><code>ActionController::Rescue</code></a> defines a <a href="http://github.com/rails/rails/tree/v2.1.0/actionpack/lib/action_controller/rescue.rb#L148-150"><code>rescue_action_in_public</code></a> that calls <a href="http://github.com/rails/rails/tree/v2.1.0/actionpack/lib/action_controller/rescue.rb#L156-164"><code>render_optional_error_file</code></a>.
+
+Rather than defining my own <code>rescue_action</code> in <code>ApplicationController</code>, where I would have to duplicate the list of exceptions that should cause a 404, I defined my own <code>render_optional_error_file</code> there:
+
+{% highlight ruby %}
+def render_optional_error_file(status_code)
+  if status_code == :not_found
+    render_404
+  else
+    super
+  end
+end
+{% endhighlight %}
+
+The <code>render_404</code> method can look something like
+
+{% highlight ruby %}
+def render_404
+  respond_to do |type| 
+    type.html { render :template => "errors/error_404", :layout => 'application', :status => 404 } 
+    type.all  { render :nothing => true, :status => 404 } 
+  end
+  true  # so we can do "render_404 and return"
+end
+{% endhighlight %}
+
+<code>render_optional_error_file</code> <em>is</em> a documented method, so even though using <code>rescue_action</code> is probably less likely to break with future versions of Rails, I should think this solution is reasonably reliable.
+
+<h4>Gotchas</h4>
+
+Note that you won't see this in local development, since it involves <code>rescue_action_in_public</code>. If you want to have a look, put
+
+{% highlight ruby %}
+alias_method :rescue_action_locally, :rescue_action_in_public
+{% endhighlight %}
+in your <code>ApplicationController</code>, but don't forget to remove it after.
+
+Another caveat is that if your server configuration has a directive like <code>ErrorDocument 404 /404.html</code> (Apache) or <code>error_page  404 /404.html;</code> (nginx), that will eclipse your Rails action. Just remove the directive.

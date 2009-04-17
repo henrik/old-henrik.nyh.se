@@ -1,0 +1,52 @@
+!!!strict
+
+%html{html_attrs}
+
+  %head
+    %meta{ :"http-equiv" => 'Content-Type', :content => 'text/html; charset=utf-8' }
+    %title= page.title
+    %meta{ :name => 'author', :content => 'Henrik Nyh (http://henrik.nyh.se)' }
+    %link{ :href => FEED_URL, :rel => "alternate", :title => "The Pug Automatic", :type => "application/atom+xml" }
+    
+    %link{ :rel => "openid.server",   :href => "http://openid.nyh.se/henrik" }
+    %link{ :rel => "openid.delegate", :href => "http://openid.nyh.se/henrik" }
+    
+    %link{ :rel => "stylesheet", :type => 'text/css', :href => '/css/syntax.css' }
+    %link{ :rel => "stylesheet", :type => 'text/css', :href => '/css/screen.css' }
+    %link{ :rel => "stylesheet", :type => 'text/css', :href => '/css/style.css' }
+
+  %body
+    .site
+    
+      .sidebar
+
+        .title
+          %p= link_to('<img src="/images/pug.png" alt="" />', "/")
+          %p= link_to("The Pug Automatic", "/")
+
+        -# top_tags = site.tags.map {|t,ps| [t, ps.length] }.sort_by {|t,c| -c }.map {|t,c| t }[0,3]
+        %p A blog by Henrik Nyh mostly on Ruby, Rails and OS X automation.
+        %p (The blog is changing code. Comments and more styling forthcoming.)
+        -# Mostly on 
+        =# tag_links(top_tags, has_tag=false), "."
+        -#%p
+        -#  Also
+        -# more_tags = (site.tags.keys - top_tags).sort_by {|tag| tag.downcase }
+        =# tag_links(more_tags, has_tag=false), "."
+          
+      .content= content
+      
+      .footer
+        .contact
+          %p= link_to('RSS', FEED_URL)
+        .contact
+          %p= link_to('henrik@nyh.se', 'mailto:henrik@nyh.se')
+        .contact
+          -#%p
+          -#  = link_to('github.com/henrik', 'http://github.com/henrik')
+          -#  %br
+          -#  = link_to('twitter.com/henrik', 'http://twitter.com/henrik')
+          -#  %br
+          -#  = link_to('flickr.com/photos/malesca', 'http://flickr.com/photos/malesca')
+
+      -# TODO: Google Analytics

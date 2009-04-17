@@ -1,0 +1,16 @@
+--- 
+wordpress_id: 261
+title: Use "require 'sass'" to enable Sass with Merb 1.0.1
+tags: 
+- Ruby
+- Merb
+---
+Just a quick post for Google:
+
+To get <a href="http://haml.hamptoncatlin.com/">Sass</a> working with <a href="http://merbivore.com/">Merb 1.0.1</a>, I had to add this to <code>init.rb</code>:
+
+{% highlight ruby %}
+require 'sass'
+{% endhighlight %}
+
+Merb has been changing rapidly up to 1.0: when I googled this, I saw other solutions where you added the <code>'haml'</code> dependency or didn't have to do anything. Neither of those worked for me with Merb 1.0.1, though.

@@ -1,0 +1,56 @@
+--- 
+wordpress_id: 168
+title: OS X icon transparency and Tasks bundle file icon
+tags: 
+- OS X
+- TextMate
+- Annoyances
+- Design
+---
+This is a multi-purpose post: a workaround for the poor icon handling in OS X and a pretty icon for my <a href="http://henrik.nyh.se/2007/08/tasks-bundle">Tasks bundle</a>.
+
+<h4>Tasks bundle icon</h4>
+
+I got tired of the generic blank document icon for my <a href="http://henrik.nyh.se/2007/08/tasks-bundle">Tasks bundle</a> <code>.todo</code> files, so I custom-made one:
+
+<p class="center">
+<a href="http://henrik.nyh.se/uploads/todo.icns"><img src="http://henrik.nyh.se/uploads/todo.icns.png" alt="[Icon]" />
+todo.icns</a>
+</p>
+
+<!--more-->
+
+There is an official TextMate document icon template somewhere, but until I get an URL for that, here is the Photoshop <code>psd</code> I made from an existing icon: <a href="http://henrik.nyh.se/uploads/textmate.icns.psd">textmate.icns.psd</a>.
+
+To convert the <code>psd</code> file to an <code>.icns</code> file, I used Icon Composer which ships with the (free) <a href="http://www.apple.com/macosx/developertools/">Apple Developer Tools</a>. Just drag the PSD to the largest slot in the Icon Composer window, then drag from there to each smaller slot in turn, using scaled versions and extracting masks when prompted.
+
+<h4>OS X icon woes</h4>
+
+I love many things about OS X, but the icon handling is really, really horrible.
+
+What I would really like to do is make all files with the <code>.todo</code> extension use this icon. However, after <a href="http://www.google.com/search?q=%22os+x%22+extension%7C%22file+type%22+icon+change">googling it</a>, it seems like I would have to modify TextMate itself and have my changes overwritten at every update, or convince the TextMate author to include my icon and file extension settings.
+
+So I settled for something less painful: since I keep rather few to-do lists, I can set the icon individually for each such file.
+
+Changing the icon for a file (including e.g. drives, devices and applications) in OS X is a matter of opening the info window for the file (<code>⌘I</code>), selecting the icon in the top-left and pasting something there. It's a pretty cute solution, though very non-obvious. Oh, and it sucks: if I've copied an image with transparency from Photoshop, pasting it in the info window will not preserve the transparency. The icon gets a solid background color. Same thing happens when I copy from Preview or from the image's info window.
+
+If I open the info window for an <code>.icns</code>, it bears an "icns" icon rather than itself.
+
+<div class="updated">
+<h5>Update 2007-08-16</h5>
+Dragging-and-dropping an icon file to the excellent freeware app <a href="http://www.icons.cx/goodies/">icns2icon</a> (thanks, <a href="http://henrik.nyh.se/2007/08/os-x-icons#comment-45566">Andrew</a>!) makes it appear as its own info window icon, greatly simplifying things.
+
+Leaving the kludge below to scare children.
+</div>
+
+It's something of a <a href="http://en.wikipedia.org/wiki/Bootstrapping_%28computing%29">bootstrapping</a> problem: what we really need is a file bearing the icon, to copy it from.
+
+<h4>Workaround</h4>
+
+The workaround I came up with relies on the fact that the only thing I'd been able to successfully set icons for, transparency and all, were applications, by replacing their bundled icon file with a new one.
+
+Go to <code>/Applications</code> and duplicate (⌘D) some app, perhaps Photo Booth. Right-click the copy and "Show Package Contents". Swap <code>Contents/Resources/PhotoBooth.icns</code> for your own icon, using the same filename. You may need to restart Finder or even log out and back in to get its info panel icon to change.
+
+Once the change kicks in, I can then copy the new icon from the info window to whatever file I wish, with transparency intact.
+
+This workaround is ugly for sure, but I've yet to find something else that works. Please let me know if you're aware of a better solution.

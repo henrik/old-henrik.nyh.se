@@ -1,0 +1,9 @@
+--- 
+wordpress_id: 108
+title: "Dollars\xC2\xB2"
+tags: 
+- Interesting
+---
+I needed to sum up some foreign currency and convert it to Swedish. I tried Google and found that <a href="http://www.google.com/search?q=1%20USD%20%2B%201%20GBP%20in%20SEK">it worked fine</a>. Interestingly, you're not limited to addition and subtraction, at least not if you get rid of the "in SEK" bit:
+
+<a href="http://www.google.com/search?q=1%20USD%20*%201%20GBP">(1 U.S. dollar) * 1 British pound = 1.9637 U.S. Dollars<sup>2</sup></a>

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+#post
+  %h1= link_to(page.title, '/')
+  %p.subtitle
+    Published
+    = page.date.strftime("%B %d, %Y at %H:%M %Z")
+    in
+    -# tag_links(page.tags), "."
+    = array_to_sentence(page.tags), "."
+   
+  -# Without the squiggly, Haml will indent highlighted code. 
+  ~ content

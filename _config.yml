@@ -1,0 +1,9 @@
+markdown: rdiscount
+pygments: true
+pygments_cache: /tmp/pygments_cache
+permalink: pretty
+permalink_date: %Y/%m
+sass: true
+haml: true
+post_defaults:
+  layout: post

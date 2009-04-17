@@ -1,0 +1,14 @@
+--- 
+wordpress_id: 91
+title: WTF-8
+tags: 
+- OS X
+- Cocoa
+---
+I got this dialog when attempting to insert a <code>&#x21A9;</code> into Xcode:
+
+<p class="center"><img src="http://henrik.nyh.se/uploads/utf8orunicode.png" alt="[Encoding Conflict. You are trying to insert characters that cannot be handled by the file's current encoding. Do you want to promote the file to a richer encoding? (Promote to UTF8) (Cancel) (Promote to Unicode)]" /></p>
+
+Love the encoding smarts, but last I checked, UTF-8 was one of several ways of encoding the Unicode character set &ndash; they're not alternative encodings to choose between.
+
+("Unicode" seems to denote UTF-16 in this case.)

@@ -1,0 +1,33 @@
+--- 
+wordpress_id: 238
+title: Raise Error404, don't render and return
+tags: 
+- Ruby
+- Ruby on Rails
+---
+I think it's fairly common in Rails to define a <code>render_404</code> method and do
+
+{% highlight ruby %}
+render_404 and return
+{% endhighlight %}
+from actions when you want to show a 404 error page (as described <a href="http://www.sitepoint.com/blogs/2006/08/30/being-a-good-little-404er/">here</a>).
+
+A better solution is to <i>raise</i> a custom <code>Error404</code> exception, then catching that in your <code>ApplicationController</code> and rendering the 404 page.
+
+Not a huge difference, but this means you don't have to mess with the <code>and return</code>. It also makes it much easier to divide code across methods and classes, since only the current action can <code>return</code> from itself, but any code it calls can raise exceptions that bubble up to the <code>ApplicationController</code>.
+
+<!--more-->
+
+I just put
+
+{% highlight ruby %}
+class Error404 < StandardError; end
+{% endhighlight %}
+at the top of my <code>app/controllers/application.rb</code> and add
+
+{% highlight ruby %}
+rescue_from Error404, :with => :render_404
+{% endhighlight %}
+to the <code>ApplicationController</code>.
+
+The <code>render_404</code> method is described in <a href="http://www.sitepoint.com/blogs/2006/08/30/being-a-good-little-404er/">the article I mentioned</a>.
