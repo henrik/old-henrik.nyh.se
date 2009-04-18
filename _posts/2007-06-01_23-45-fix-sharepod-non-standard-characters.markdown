@@ -12,9 +12,10 @@ After some trial-and-ctrl-alt-del, I ended up with <a href="http://www.sturm.net
 SharePod has an annoying bug, though: file paths in the XML file are URL-encoded from Latin-1 rather than the UTF-8 encoding iTunes expects. This means iTunes will fail to import songs containing non-ASCII characters, i.e. a lot of Swedish songs.
 
 The SharePod site says that
-<blockquote>
-If iTunes says it 'couldn't find all the files', check your music for non-standard characters, like accented characters (Á, ö, etc) as these will often cause problems for iTunes to import. 
-</blockquote>
+
+> If iTunes says it 'couldn't find all the files', check your music for non-standard characters,
+> like accented characters (Á, ö, etc) as these will often cause problems for iTunes to import. 
+
 I think "non-standard characters" is a rather inaccurate turn of phrase. Anyway, I solved this problem (which is really a SharePod bug, not an iTunes issue) with a small Ruby script.
 
 <!--more-->

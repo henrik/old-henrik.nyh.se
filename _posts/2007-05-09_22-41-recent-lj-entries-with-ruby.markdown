@@ -114,7 +114,7 @@ LIVEJOURNAL_USERNAME = 'me'
 
 No need for a password since the code only deals with public entries.
 
-Finally, this is the erb/eruby to actually show the entries (sorry about the funny highlighting):
+Finally, this is the erb/eruby to actually show the entries:
 
 {% highlight rhtml %}
 <h2>Recent LiveJournal entries</h2>

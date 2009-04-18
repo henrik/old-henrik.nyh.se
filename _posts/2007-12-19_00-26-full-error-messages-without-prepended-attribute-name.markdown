@@ -38,9 +38,10 @@ Now,
 errors.add('name', "is just silly") if name.just_silly?
 errors.add('born_at', "You're too young") if age < AGE_LIMIT
 {% endhighlight %}
+
 will result in the full error messages
 
-{% highlight ruby %}
+{% highlight text %}
 Name is just silly
 You're too young
 {% endhighlight %}

@@ -25,14 +25,14 @@ However, there are a couple of ways to include a snippet that expands <em>automa
 
 The placeholder replacement is possible because each template is in effect a shell script preprocessor in addition to the template files. This shell script can actually be used to add snippet powers to templates.
 
-For a new template, the default script is (I broke up <code>perl</code> because of blog software issues):
+For a new template, the default script is:
 
 {% highlight bash %}
 if [[ ! -f "$TM_NEW_FILE" ]]; then
    TM_YEAR=`date +%Y` \
    TM_DATE=`date +%Y-%m-%d` \
    TM_USERNAME=`niutil -readprop / /users/\$USER realname` \
-   p erl  -pe 's/\$\{([^}]*)\}/$ENV{$1}/g' \
+   perl -pe 's/\$\{([^}]*)\}/$ENV{$1}/g' \
       < template_in.txt > "$TM_NEW_FILE"
 fi
 {% endhighlight %}

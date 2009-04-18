@@ -30,6 +30,4 @@ class Haml::Engine
 end
 {% endhighlight %}
 
-Ignore the broken syntax highlighting in this blog.
-
-There is no step three!
+And that's it.

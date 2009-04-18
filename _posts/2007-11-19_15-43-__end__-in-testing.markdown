@@ -25,8 +25,7 @@ end
 
 __END__
 
-# This stuff is in effect commented out, though the syntax
-# highlighter used in this blog is clueless to that fact.
+# This stuff is in effect commented out.
 def something(input)
   "hah!"
 end
