@@ -4,7 +4,7 @@ title: Page not found (Error 404)
 ---
 #error
 
-  %h1= page.title
+  %h1= link_to(page.title, '/')
   
   %p Though several brave pugs died in the attempt, <span id="pathname">the requested page</span> could not be found.
 
