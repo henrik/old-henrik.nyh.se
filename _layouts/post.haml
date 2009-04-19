@@ -11,8 +11,7 @@ layout: default
     = array_to_sentence(page.tags), "."
 
     -# TextMate edit link. JS sets the link text if a cookie is present: see js/app.js.
-    %span#edit
-      %a{ :href => "txmt://open?url=file://#{page.path}" }
+    %span#edit= link_to('', "txmt://open?url=file://#{page.path}")
    
   -# Without the squiggly, Haml will indent highlighted code. 
   ~ content
