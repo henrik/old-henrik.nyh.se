@@ -1,0 +1,17 @@
+---
+layout: default
+title: Tags on The Pug Automatic
+---
+
+#tags
+
+  = tag_cloud(site.tags)
+  
+  - site.tags.sort_by {|tag,count| tag.downcase }.each do |tag,posts|
+    .tag
+      %h2.tag{ :id => slug(tag) }=h tag
+      %ul.posts
+        - posts.each do |post|
+          %li
+            %strong.date= post.date.strftime('%b %d, %Y')
+            = link_to(h(post.title), post.url)

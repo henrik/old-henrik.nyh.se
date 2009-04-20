@@ -27,15 +27,13 @@
           %p= link_to('<img src="/images/pug.png" alt="" />', "/")
           %p= link_to("The Pug Automatic", "/")
 
-        -# top_tags = site.tags.map {|t,ps| [t, ps.length] }.sort_by {|t,c| -c }.map {|t,c| t }[0,3]
         %p A blog by Henrik Nyh mostly on Ruby, Rails and OS X automation.
-        %p (The blog is changing code. Styling and cleanup forthcoming.)
-        -# Mostly on 
-        =# tag_links(top_tags, has_tag=false), "."
-        -#%p
-        -#  Also
-        -# more_tags = (site.tags.keys - top_tags).sort_by {|tag| tag.downcase }
-        =# tag_links(more_tags, has_tag=false), "."
+        
+        %p
+          Browse posts 
+          = link_to('by date', '/')
+          or
+          = link_to('by tag', '/tag'), '.'
           
       .content= content
       

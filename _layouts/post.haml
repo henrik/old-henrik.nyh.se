@@ -7,8 +7,7 @@ layout: default
     Published
     = page.date.strftime("%B %d, %Y at %H:%M %Z")
     in
-    -# tag_links(page.tags), "."
-    = array_to_sentence(page.tags), "."
+    = tag_links(page.tags), "."
 
     -# TextMate edit link. JS sets the link text if a cookie is present: see js/app.js.
     %span#edit= link_to('', "txmt://open?url=file://#{page.path}")

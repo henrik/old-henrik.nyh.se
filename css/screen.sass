@@ -47,7 +47,7 @@ blockquote
   font-style: italic
 
 
-/* Home
+/* Lists
 
 div.year
   margin-bottom: 60px
@@ -58,16 +58,44 @@ div.year
     float: left
     margin: 0.2em 0 0 -3em
     font-size: 250%
-  h3.month
+  h3.month, h2.tag
     margin-top: 0
-  ul.posts
-    list-style-type: none
-    margin-bottom: 2em
-    li
-      line-height: 1.75em  
-      strong.day
-        color: #888
-        margin-right: 5px
+    
+ul.posts
+  list-style-type: none
+  margin-bottom: 2em
+  li
+    line-height: 1.75em  
+    strong.date
+      color: #888
+      margin-right: 5px
+      .tag &
+        width: 6.5em
+        display: inline-block
+        text-align: right
+        
+#tags #list
+  margin-bottom: 50px
+  li
+    display: inline
+    line-height: 180%
+    a
+      padding: 5px
+      text-decoration: none
+      span
+        font-size: 11px
+    &.tier-1
+      font-size: 80%
+    &.tier-2
+      font-size: 100%
+    &.tier-3
+      font-size: 120%
+    &.tier-4
+      font-size: 140%
+    &.tier-5
+      font-size: 160%
+    &.tier-6
+      font-size: 180%
 
 /* Site
 

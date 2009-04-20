@@ -13,5 +13,5 @@ title: The Pug Automatic
           - days.sort.reverse.each do |day,posts|
             - posts.each do |post|
               %li
-                %strong.day= "%02d" % day
+                %strong.date= "%02d" % day
                 = link_to(h(post.title), post.url)
