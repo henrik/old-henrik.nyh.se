@@ -13,10 +13,12 @@ Our setup is a Hewlett-Packard PSC 950 connected to a networked Windows computer
 Following the hint, I added a printer with a URI like <code>smb://username:password@computername/printername</code>.
 
 My first attempts gave gibberish output starting with
-<pre><code>
+
+{% highlight text %}
 %!PS-Adobe-3.0
               %RBINumCopies: 1
-</code></pre>
+{% endhighlight %}
+
 followed by a few more lines in the same spirit and then a number of blank pages, at which point I cancelled printing.
 
 After trying a couple of different printer models, selecting "HP" and then "HP LaserJet 6 series - Gimp-Print v5.0.0-beta2" worked. I'm sure others do also. I think the Gimp-Print drivers are bundled with OS X starting at 10.3 or so.

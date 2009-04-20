@@ -37,7 +37,8 @@ I'll paste the bundle documentation (available through <code>Help</code> in the 
 <h4>Template (&#x21E7;&#x2303;&#x2325;&#x2318;G)</h4>
 <p>Select <code>File &gt; New From Template &gt; Greasemonkey &gt; Userscript</code> to create a new script from template. The template outputs this:</p>
 
-<pre><code>// ==UserScript==
+{% highlight text %}
+// ==UserScript==
 // @name          Name
 // @namespace     http://www.example.com
 // @description   Description.
@@ -47,7 +48,7 @@ I'll paste the bundle documentation (available through <code>Help</code> in the 
 
 
 /* Your favorite functions go here. */
-</code></pre>
+{% endhighlight %}
 
 <p>The metadata block is a snippet, with placeholders. If you set a <code>TM_NAMESPACE</code> shell variable in the TextMate preferences (<code>Preferences &gt; Advanced &gt; Shell Variables</code>), this will be used as the default <code>@namespace</code>. If you have a page currently open in Firefox, that will be the default value for the <code>@include</code>.</p>
 
