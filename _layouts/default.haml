@@ -28,6 +28,10 @@
           %p= link_to("The Pug Automatic", "/")
 
         %p== A blog by Henrik Nyh mostly on #{tag_link "Ruby"}, #{tag_link "Rails", "Ruby on Rails"} and #{tag_link "OS X"} automation.
+          
+        %form#search{ :method => 'get', :action => 'http://www.google.com/search' }
+          %input.text{ :type => 'text', :name => 'q' }
+          %input.button{ :type => 'submit', :value => 'Google' }
         
         = tag_cloud(site.tags)
           

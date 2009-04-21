@@ -1,5 +1,11 @@
 $(function() {
   
+  $('#search').submit(function() {
+    var q = encodeURIComponent(this["q"].value);
+    window.location = "http://www.google.com/search?q=site:henrik.nyh.se " + q;
+    return false;
+  });
+
   if ($.cookie('editable') && $('#edit').length) {
     $('#edit a').text('Edit').before('[').after(']');
   }
