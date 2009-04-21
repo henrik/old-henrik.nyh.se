@@ -34,6 +34,12 @@
           %input.button{ :type => 'submit', :value => 'Google' }
         
         = tag_cloud(site.tags)
+        
+        %h2 Elsewhere
+        %ul#elsewhere
+          %li= link_to('GitHub',  'http://github.com/henrik')
+          %li= link_to('Twitter', 'http://twitter.com/henrik')
+          %li= link_to('Flickr',  'http://flickr.com/photos/malesca')
           
       .content= content
       
@@ -48,13 +54,6 @@
             = link_to('Jekyll', 'http://github.com/henrik/jekyll')
             and
             = link_to('Disqus', 'http://disqus.com'), '.'
-        .contact
-          -#%p
-          -#  = link_to('github.com/henrik', 'http://github.com/henrik')
-          -#  %br
-          -#  = link_to('twitter.com/henrik', 'http://twitter.com/henrik')
-          -#  %br
-          -#  = link_to('flickr.com/photos/malesca', 'http://flickr.com/photos/malesca')
 
       :javascript
       
