@@ -55,7 +55,7 @@ module Helpers
           title = c == 1 ? "1 post" : "#{c} posts"
           %{<li class="tier-#{s}" title="#{title}">#{tag_link(t)}</li>}
         }.join(' '),
-      '</ul>'
+      '</ol>'
     ].join  
   end
 
