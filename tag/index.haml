@@ -5,8 +5,8 @@ title: Tags on The Pug Automatic
 
 #tags
 
-  = tag_cloud(site.tags)
-  
+  %h1 Tags
+
   - site.tags.sort_by {|tag,count| tag.downcase }.each do |tag,posts|
     .tag
       %h2.tag{ :id => slug(tag) }=h tag

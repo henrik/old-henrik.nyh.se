@@ -27,13 +27,9 @@
           %p= link_to('<img src="/images/pug.png" alt="" />', "/")
           %p= link_to("The Pug Automatic", "/")
 
-        %p A blog by Henrik Nyh mostly on Ruby, Rails and OS X automation.
+        %p== A blog by Henrik Nyh mostly on #{tag_link "Ruby"}, #{tag_link "Rails", "Ruby on Rails"} and #{tag_link "OS X"} automation.
         
-        %p
-          Browse posts 
-          = link_to('by date', '/')
-          or
-          = link_to('by tag', '/tag'), '.'
+        = tag_cloud(site.tags)
           
       .content= content
       
