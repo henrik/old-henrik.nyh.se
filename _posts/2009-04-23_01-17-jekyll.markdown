@@ -1,0 +1,78 @@
+---
+title: Jekyll
+tags: [Jekyll, WordPress, Ruby]
+---
+
+I finally got around to change this blog from [WordPress](http://wordpress.org/) to [my own fork](http://github.com/henrik/jekyll) of Tom Preston-Werner's [Jekyll]((http://github.com/mojombo/jekyll).
+
+Jekyll is a Ruby gem that can generate a static blog from layouts, assets and blog posts in Markdown or Textile. It powers [GitHub Pages](http://github.com/blog/272-github-pages) but can also be used for self-hosted blogs.
+
+The source for this blog itself is [on GitHub](http://github.com/henrik/henrik.nyh.se). See the README for license.
+
+
+## Leaving WordPress
+
+There are many things to like about Jekyll. Unlike WordPress, it's Ruby code. It's also very little code, so it's easy to modify to your own needs. I did not enjoy modifying the WordPress PHP code.
+
+With Jekyll, you can edit blog content in your favorite editor and use version control. The fact that the generated blog is all static files means very good performance. I like how caching is a given.
+
+I used the WordPress importer provided by Jekyll with [some modifications](http://gist.github.com/100135) to get tags, times and to fix some markup issues particular to my blog.
+
+With a static site, you need some sort of hosted comments. I use [Disqus](http://disqus.com) which seems decent. Since comments are added with JavaScript, they won't be indexed along your blog post by Google, but Disqus has indexable comment threads on their site, linked back to posts.
+
+To import WordPress comments into Jekyll, you need to install a [WordPress plugin](http://wordpress.org/extend/plugins/disqus-comment-system/) and do it from there. Disqus did not make this very clear.
+
+It would be nice to have some [TextMate](http://macromates.com/) commands to create the file for a new post, to update the timestamps and slug and so on. I may write them sometime.
+
+
+## My additions and fixes
+
+I've added things in [my Jekyll fork](http://github.com/henrik/jekyll) that are not in the [main version]((http://github.com/mojombo/jekyll). To see examples of how to use these additions, have a look in [the source for this blog](http://github.com/henrik/henrik.nyh.se).
+
+A big one for me is support for [Haml](http://haml.hamptoncatlin.com/). Regular Jekyll uses [Liquid](http://www.liquidmarkup.org/) for templates and pages. This makes a lot of sense for a hosted setup like GitHub Pages, since it limits users to a small set of safe operations. But for my own blog, I found this way too limiting. Also, I enjoy using Haml.
+
+Haml support has been added, but Liquid support has not been removed. In fact, it's still needed for things like highlighting. I may tear it out entirely at some point, though supporting Liquid as well means it's easier to port over blogs from Liquid to Haml file by file.
+
+It also supports [Sass](http://haml.hamptoncatlin.com/docs/sass) for CSS.
+
+There are some Rails-inspired helper methods provided, `h(text)` and `link_to(text, url)`. You can include a `_helpers.rb` file in your blog with more helpers. This keeps the Haml views clean.
+
+You can set default post metadata in your `_config.yml` file, typically the layout to use. My version can also set the metadata title from the first Markdown or Textile header in the post. This means that you may get by without specifying a metadata block at all.
+
+You can change date format in post URLs, e.g. drop the day and only use the year and month, like on this blog. Posts can have a time, not just a date. The original filename for the generated post is available, so you can do fun stuff like ["Edit in TextMate" links](http://github.com/henrik/henrik.nyh.se/commit/afdf2682d09ffab1ce29cc95d4583d8317bc0d9d). You can do a lot with static sites and some imagination.
+
+Collated posts (by year, month and day in nested hashes) are available to pages, to easily create an archive. Posts by tag are available. Tags are basically like regular Jekyll categories or topics, but are not reflected in the URL.
+
+Jekyll's syntax highlighting (using [Pygments](http://pygments.org/)) can take a while. I added a simple file cache that reduced generation time for this blog from around 90 seconds to around 3 seconds.
+
+There are also some bugfixes. Pygments highlighting would break on non-ASCII characters. I worked around a RDiscount (Markdown) bug where it would not convert text after a highlighted block. These fixes have been sent upstream.
+
+
+## Deployment
+
+Though you can set things up so your blog is regenerated when it's pushed to some Git repository, I don't currently want this. Instead I use a simple shell script in `tasks/deploy` under the blog root:
+
+{% highlight bash %}
+#!/usr/bin/env bash
+jekyll && rsync -avz --delete _site/ nyh:henrik.nyh.se/jekyll
+{% endhighlight %}
+
+That means I can deploy by typing `tasks/deploy` from a Terminal in the blog root. `nyh` is a SSH alias.
+
+The `henrik.nyh.se` directory is the webroot for the `http://henrik.nyh.se` URL. I wanted the generated blog to go in a `jekyll` subdirectory to keep it separate from a ton of other stuff I have under the webroot. Requests to the domain should be rewritten to this subdirectory unless the file exists outside it. To my surprise, getting that working was fairly tricky. I ended up with [these `.htaccess` files](http://gist.github.com/97822).
+
+
+## Tips
+
+Some lessons learned:
+
+Using the `--auto` flag with Jekyll will swallow exceptions. Don't use it if you want to see error traces. When you do use it, I recommend something like `rm -rf _site/* && jekyll --server --auto`. By removing previously generated files first, you notice if an error prevents them regenerating.
+
+If you're hacking on Jekyll itself, put its `bin` directory (in my case, `/Users/henrik/Code/jekyll/bin`) in your `PATH` so you don't have to rebuild the gem all the time.
+
+Make sure to precede highlight blocks in Markdown posts with a blank line or they will get paragraph tags inserted. I will probably look into patching this.
+
+
+## Feedback
+
+There are bound to be issues with the markup in the imported old posts. If you notice anything, let me know.
