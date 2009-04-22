@@ -5,7 +5,7 @@ title: Tags on The Pug Automatic
 
 #tags
 
-  %h1 Tags
+  =header "Tags"
 
   - site.tags.sort_by {|tag,count| tag.downcase }.each do |tag,posts|
     .tag

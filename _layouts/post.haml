@@ -2,7 +2,7 @@
 layout: default
 ---
 #post
-  %h1= link_to(page.title, '/')
+  =header page.title
   %p.subtitle
     Published
     = page.date.strftime("%B %d, %Y at %H:%M %Z")
