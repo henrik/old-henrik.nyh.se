@@ -22,7 +22,7 @@ With a static site, you need some sort of hosted comments. I use [Disqus](http:/
 
 To import WordPress comments into Jekyll, you need to install a [WordPress plugin](http://wordpress.org/extend/plugins/disqus-comment-system/) and do it from there. Disqus did not make this very clear.
 
-It would be nice to have some [TextMate](http://macromates.com/) commands to create the file for a new post, to update the timestamps and slug and so on. I may write them sometime.
+It would be nice to have some [TextMate](http://macromates.com/) commands to create the file for a new post, to update the timestamps and slug and so on. I may write them some time.
 
 
 ## My additions and fixes
@@ -39,7 +39,7 @@ There are some Rails-inspired helper methods provided, `h(text)` and `link_to(te
 
 You can set default post metadata in your `_config.yml` file, typically the layout to use. My version can also set the metadata title from the first Markdown or Textile header in the post. This means that you may get by without specifying a metadata block at all.
 
-You can change date format in post URLs, e.g. drop the day and only use the year and month, like on this blog. Posts can have a time, not just a date. The original filename for the generated post is available, so you can do fun stuff like ["Edit in TextMate" links](http://github.com/henrik/henrik.nyh.se/commit/afdf2682d09ffab1ce29cc95d4583d8317bc0d9d). You can do a lot with static sites and some imagination.
+You can change date format in post URLs, e.g. drop the day and only use the year and month, like on this blog. Posts can have a time, not just a date. The original filename for the generated post is available, so you can do fun stuff like ["Edit in TextMate" links](http://github.com/henrik/henrik.nyh.se/commit/afdf2682d09ffab1ce29cc95d4583d8317bc0d9d). Static sites and some imagination go a long way.
 
 Collated posts (by year, month and day in nested hashes) are available to pages, to easily create an archive. Posts by tag are available. Tags are basically like regular Jekyll categories or topics, but are not reflected in the URL.
 
