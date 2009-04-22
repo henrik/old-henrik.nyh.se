@@ -3,7 +3,7 @@ title: Jekyll
 tags: [Jekyll, WordPress, Ruby]
 ---
 
-I finally got around to change this blog from [WordPress](http://wordpress.org/) to [my own fork](http://github.com/henrik/jekyll) of Tom Preston-Werner's [Jekyll]((http://github.com/mojombo/jekyll).
+I finally got around to change this blog from [WordPress](http://wordpress.org/) to [my own fork](http://github.com/henrik/jekyll) of Tom Preston-Werner's [Jekyll](http://github.com/mojombo/jekyll).
 
 Jekyll is a Ruby gem that can generate a static blog from layouts, assets and blog posts in Markdown or Textile. It powers [GitHub Pages](http://github.com/blog/272-github-pages) but can also be used for self-hosted blogs.
 
@@ -27,7 +27,7 @@ It would be nice to have some [TextMate](http://macromates.com/) commands to cre
 
 ## My additions and fixes
 
-I've added things in [my Jekyll fork](http://github.com/henrik/jekyll) that are not in the [main version]((http://github.com/mojombo/jekyll). To see examples of how to use these additions, have a look in [the source for this blog](http://github.com/henrik/henrik.nyh.se).
+I've added things in [my Jekyll fork](http://github.com/henrik/jekyll) that are not in the [main version](http://github.com/mojombo/jekyll). To see examples of how to use these additions, have a look in [the source for this blog](http://github.com/henrik/henrik.nyh.se).
 
 A big one for me is support for [Haml](http://haml.hamptoncatlin.com/). Regular Jekyll uses [Liquid](http://www.liquidmarkup.org/) for templates and pages. This makes a lot of sense for a hosted setup like GitHub Pages, since it limits users to a small set of safe operations. But for my own blog, I found this way too limiting. Also, I enjoy using Haml.
 
