@@ -1,8 +1,9 @@
 markdown: rdiscount
 pygments: true
 pygments_cache: /tmp/pygments_cache
-permalink: pretty
+permalink: date
 permalink_date: %Y/%m
+multiviews: true
 sass: true
 haml: true
 post_defaults:

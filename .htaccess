@@ -1,3 +1,5 @@
+Options +MultiViews
+
 ErrorDocument 404 /404.html
 
 # Disable auto-adding slashes to directories without them, since this happens

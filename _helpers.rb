@@ -29,7 +29,7 @@ module Helpers
   
   def tag_link(name, link_name=nil)
     link_name ||= name
-    link_to(h(name), "/tag/##{slug(link_name)}")
+    link_to(h(name), "/tag##{slug(link_name)}")
   end
   
   def tag_links(array)
