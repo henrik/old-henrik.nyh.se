@@ -4,7 +4,7 @@
 
   %head
     %meta{ :"http-equiv" => 'Content-Type', :content => 'text/html; charset=utf-8' }
-    %title= page.title
+    %title= page.title.match(/The Pug Automatic$/) ? page.title : "#{page.title} – The Pug Automatic"
     %meta{ :name => 'author', :content => 'Henrik Nyh (http://henrik.nyh.se)' }
     %link{ :href => FEED_URL, :rel => "alternate", :title => "The Pug Automatic", :type => "application/atom+xml" }
     
