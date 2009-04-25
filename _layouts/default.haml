@@ -16,6 +16,7 @@
     
     %script{ :src => '/js/jquery.min.js', :type => 'text/javascript' }
     %script{ :src => '/js/jquery.cookie.js', :type => 'text/javascript' }
+    %script{ :src => '/js/jquery.twitter.js', :type => 'text/javascript' }
     %script{ :src => '/js/app.js', :type => 'text/javascript' }
 
   %body
@@ -34,12 +35,12 @@
           %input.button{ :type => 'submit', :value => 'Google' }
         
         = tag_cloud(site.tags)
-        
-        %h2 Elsewhere
-        %ul#elsewhere
-          %li= link_to('GitHub',  'http://github.com/henrik')
-          %li= link_to('Twitter', 'http://twitter.com/henrik')
-          %li= link_to('Flickr',  'http://flickr.com/photos/malesca')
+
+        #github
+          %a{ :href => 'http://github.com/henrik' }
+            %img{ :src => '/images/github.png', :alt => 'github.com/henrik' }
+            
+        #tweets
           
       .content= content
       

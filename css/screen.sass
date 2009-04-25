@@ -114,6 +114,7 @@ ol#tag-cloud
     float: right
     width: 260px
     margin-right: 1em
+    margin-bottom: 45px
     .title
       color: #DAA520
       font-weight: bold
@@ -124,15 +125,29 @@ ol#tag-cloud
         color: #DAA520
         &:hover
           color: #000
-    h2
-      margin: 20px 0 10px 0
-    ul#elsewhere
+    #github, #tweets
+      margin-top: 45px
+    #github
+      text-align: center
+    #tweets
+      h2
+        margin-bottom: -5px
       li
         list-style-type: none
-        line-height: 180%
-        a
-          padding: 0 5px
-
+        font-size: 12px
+        background: #eee
+        padding: 8px 10px
+        margin: 15px 0
+        &:after
+          content: ""
+          border: 8px solid transparent
+          border-top: 8px solid #eee
+          border-bottom: 0
+          width: 0
+          height: 0
+          display: block
+          margin: 5px 0 -15px 0
+            
   .content
     width: 550px
     margin-left: 1em

@@ -5,6 +5,16 @@ $(function() {
     window.location = "http://www.google.com/search?q=site:henrik.nyh.se " + q;
     return false;
   });
+  
+  $("#tweets").getTwitter({
+    userName: "henrik",
+    numTweets: 3,
+    slideIn: true,
+    showHeading: true,
+    headingText: 'Recently on <a href="http://twitter.com/henrik">Twitter</a>:',
+    showProfileLink: false,
+    rejectRepliesOutOf: 20
+  });
 
   if ($.cookie('editable') && $('#edit').length) {
     $('#edit a').text('Edit').before('[').after(']');
