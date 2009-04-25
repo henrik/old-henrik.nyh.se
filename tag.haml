@@ -14,4 +14,4 @@ title: Tags
         - posts.each do |post|
           %li
             %strong.date= post.date.strftime('%b %d, %Y')
-            = link_to(h(post.title), post.url)
+            = post_link(post)

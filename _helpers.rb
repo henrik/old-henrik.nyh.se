@@ -27,6 +27,10 @@ module Helpers
     "<h1>%s</h1>" % link_to(text, '/')
   end
   
+  def post_link(post)
+    link_to(h(post.title), post.url)
+  end
+  
   def tag_link(name, link_name=nil)
     link_name ||= name
     link_to(h(name), "/tag##{slug(link_name)}")

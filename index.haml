@@ -14,4 +14,4 @@ title: The Pug Automatic
             - posts.each do |post|
               %li
                 %strong.date= "%02d" % day
-                = link_to(h(post.title), post.url)
+                = post_link(post)
