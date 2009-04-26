@@ -1,11 +1,5 @@
 $(function() {
   
-  $('#search').submit(function() {
-    var q = encodeURIComponent(this["q"].value);
-    window.location = "http://www.google.com/search?q=site:henrik.nyh.se " + q;
-    return false;
-  });
-  
   $("#tweets").getTwitter({
     userName: "henrik",
     numTweets: 3,

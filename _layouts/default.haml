@@ -32,6 +32,7 @@
           
         %form#search{ :method => 'get', :action => 'http://www.google.com/search' }
           %input.text{ :type => 'text', :name => 'q' }
+          %input{ :type => 'hidden', :name => 'sitesearch', :value => 'henrik.nyh.se' }
           %input.button{ :type => 'submit', :value => 'Google' }
         
         = tag_cloud(site.tags)
