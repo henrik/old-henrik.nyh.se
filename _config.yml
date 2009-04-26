@@ -1,8 +1,7 @@
 markdown: rdiscount
 pygments: true
 pygments_cache: /tmp/pygments_cache
-permalink: date
-permalink_date: %Y/%m
+permalink: /:year/:month/:title.html
 multiviews: true
 sass: true
 haml: true
