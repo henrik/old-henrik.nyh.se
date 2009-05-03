@@ -20,15 +20,17 @@
     %script{ :src => '/js/app.js', :type => 'text/javascript' }
 
   %body
-    .site
+    #site
     
-      .sidebar
+      #sidebar
 
-        .title
+        #title
           %p= link_to('<img src="/images/pug.png" alt="" />', "/")
           %p= link_to("The Pug Automatic", "/")
 
-        %p== A blog by #{link_to('Henrik Nyh', '/about')} mostly on #{tag_link 'Ruby'}, #{tag_link 'Rails', 'Ruby on Rails'} and #{tag_link 'OS X'} automation.
+        %p
+          == A blog by #{link_to('Henrik Nyh', '/about')} mostly on #{tag_link 'Ruby'}, #{tag_link 'Rails', 'Ruby on Rails'} and #{tag_link 'OS X'} automation.
+          = link_to('Subscribe by RSS', FEED_URL), '.'
           
         %form#search{ :method => 'get', :action => 'http://www.google.com/search' }
           %input.text{ :type => 'text', :name => 'q' }
@@ -43,19 +45,13 @@
             
         #tweets
           
-      .content= content
+      #content= content
       
-      .footer
-        .contact
-          %p= link_to('RSS', FEED_URL)
-        .contact
-          %p= link_to('henrik@nyh.se', 'mailto:henrik@nyh.se')
-        .contact
-          %p
-            Powered by
-            = link_to('Jekyll', 'http://github.com/henrik/jekyll')
-            and
-            = link_to('Disqus', 'http://disqus.com'), '.'
+      %p#footer
+        Powered by
+        = link_to('Jekyll', 'http://github.com/henrik/jekyll')
+        and
+        = link_to('Disqus', 'http://disqus.com'), '.'
 
       :javascript
       
