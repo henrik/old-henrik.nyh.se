@@ -14,6 +14,18 @@ $(function() {
     $('#edit a').text('Edit').before('[').after(']');
   }
   
+  $('#birthday').each(function() {
+      var text  = $(this).text();
+      var born  = new Date(text);
+      var today = new Date();
+      var ydiff = today.getFullYear() - born.getFullYear();
+      var bday = new Date(text);
+      bday.setFullYear(today.getFullYear());
+      if (bday > today) ydiff -= 1;
+
+      $(this).append(' ('+ydiff+' years old)');
+  });
+  
 });
 
 // To show edit links:
