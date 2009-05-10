@@ -20,7 +20,7 @@ I used the WordPress importer provided by Jekyll with [some modifications](http:
 
 With a static site, you need some sort of hosted comments. I use [Disqus](http://disqus.com) which seems decent. Since comments are added with JavaScript, they won't be indexed along your blog post by Google, but Disqus has indexable comment threads on their site, linked back to posts.
 
-To import WordPress comments into Jekyll, you need to install a [WordPress plugin](http://wordpress.org/extend/plugins/disqus-comment-system/) and do it from there. Disqus did not make this very clear.
+To import WordPress comments into Disqus, you need to install a [WordPress plugin](http://wordpress.org/extend/plugins/disqus-comment-system/) and do it from there. Disqus did not make this very clear.
 
 It would be nice to have some [TextMate](http://macromates.com/) commands to create the file for a new post, to update the timestamps and slug and so on. I may write them some time.
 
