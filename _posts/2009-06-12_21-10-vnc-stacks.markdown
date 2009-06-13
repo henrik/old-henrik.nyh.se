@@ -13,7 +13,9 @@ As has been blogged [elsewhere](http://lifehacker.com/software/remote-control/ad
 
     defaults write com.apple.ScreenSharing ShowBonjourBrowser_Debug 1
 
-in Terminal to see a list of local and manually added computers on launching Screen Sharing.
+in Terminal to see a list of local and manually added computers on launching Screen Sharing. Turn it off again with
+
+    defaults write com.apple.ScreenSharing ShowBonjourBrowser_Debug 0
 
 What's less well known is that you can drag the computer names from this list to e.g. the desktop. This creates a `.vncloc` shortcut file. Double-click it to connect to that computer.
 
