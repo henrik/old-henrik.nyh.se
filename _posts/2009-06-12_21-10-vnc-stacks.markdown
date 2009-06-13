@@ -38,4 +38,4 @@ First, I created a `~/Library/Remote Machines` directory and put the shortcuts i
 
 That's it, really. The effect is a nice menu for your VNC favorites.
 
-To make it look nicer, find an icon in `/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources`. It's one of the `com.apple.` files for a Mac, or `public.generic-pc` otherwise. Select the icon, run `⌘I`. Click the icon in the top left of the info pane (not the proxy icon in the title bar) so that it's highlighted, and copy it with `⌘C`. Select the `.vncloc` file, run `⌘I`, select its icon and paste with `⌘V`. Done!
+To make it look nicer, find an icon in `/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources`. It's one of the `com.apple.` files for a Mac, or `public.generic-pc` otherwise. Select the icon, run <code class="kb">⌘I</code>. Click the icon in the top left of the info pane (not the proxy icon in the title bar) so that it's highlighted, and copy it with <code class="kb">⌘C</code>. Select the `.vncloc` file, run <code class="kb">⌘I</code>, select its icon and paste with <code class="kb">⌘V</code>. Done!
