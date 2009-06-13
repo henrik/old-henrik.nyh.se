@@ -66,7 +66,8 @@ var Blog = {
       return text.split('').map(function(x) { return (glyphs[x] || x) }).join(" ");
     }
     $('.kb').each(function() {
-      this.title = "Keys: " + glyphsToNames($(this).text());
+      var text = $(this).text();
+      this.title = "Key"+(text.length>1 ? "s" : "")+": " + glyphsToNames(text);
     });
   },
   
