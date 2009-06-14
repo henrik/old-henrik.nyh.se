@@ -7,7 +7,7 @@ title: Tags
 
   =header "Tags"
 
-  - site.tags.sort_by {|tag,count| tag.downcase }.each do |tag,posts|
+  - site.tags.sort_by {|tag,_| tag.downcase }.each do |tag,posts|
     .tag
       %h2.tag{ :id => slug(tag) }=h tag
       %ul.posts

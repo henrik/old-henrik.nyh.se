@@ -5,10 +5,6 @@ FEED_URL = "http://feeds.feedburner.com/ThePugAutomatic"
 
 module Helpers
 
-  def url_encode(input)
-    CGI.escape(input)
-  end
-
   def array_to_sentence(array)
     connector = "and"
     case array.length
