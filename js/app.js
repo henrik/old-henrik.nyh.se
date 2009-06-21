@@ -60,7 +60,7 @@ var Blog = {
       "⇟": "Page Down",
       "⎋": "Escape",
       "⏏": "Eject"
-    }
+    };
 
     function glyphsToNames(text) {
       return text.split('').map(function(x) { return (glyphs[x] || x) }).join(" ");
