@@ -15,14 +15,14 @@ layout: default
   -# Without the squiggly, Haml will indent highlighted code. 
   ~ content
   
-  #previous_and_next
+  #older_and_newer
     - if page.next
       %p
-        %strong Next:
+        %strong Newer:
         =post_link(page.next)
     - if page.previous
       %p
-        %strong Previous:
+        %strong Older:
         =post_link(page.previous)
   
   #disqus_thread
