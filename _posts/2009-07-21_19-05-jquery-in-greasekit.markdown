@@ -1,6 +1,6 @@
 ---
 title: jQuery in GreaseKit
-tags: [JavaScript, jQuery, userscripts, Greasemonkey, GreaseKit]
+tags: [JavaScript, jQuery, Userscripts, Greasemonkey, GreaseKit]
 ---
 
 When writing [userscripts](http://en.wikipedia.org/wiki/Greasemonkey), I almost always want to include the [jQuery](http://jquery.com/) lib.
