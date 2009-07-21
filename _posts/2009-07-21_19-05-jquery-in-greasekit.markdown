@@ -33,6 +33,7 @@ var script = document.createElement('script');
 script.src = 'http://jquery.com/src/jquery-latest.js';
 script.type = 'text/javascript';
 script.addEventListener("load", function() {
+  unsafeWindow.jQuery.noConflict();
   jQueryIsReady(unsafeWindow.jQuery);
 }, false);
 document.getElementsByTagName('head')[0].appendChild(script);
