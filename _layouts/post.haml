@@ -26,5 +26,7 @@ layout: default
         =post_link(page.previous)
   
   #disqus_thread
+  :javascript
+    var disqus_developer = location.host.match(/\.dev$|^localhost/) ? 1 : 0;
   %script{ :type => "text/javascript", :src => "http://disqus.com/forums/pug/embed.js" }
   %noscript <a href="http://pug.disqus.com/?url=ref">View the discussion thread.</a>
