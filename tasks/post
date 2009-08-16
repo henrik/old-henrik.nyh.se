@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+# Based on a script by Alex Payne: https://gist.github.com/106869/15b2e64325ee26f2404679eb54d77f59f26c1994
+
+ROOT_DIR = File.join(File.dirname(__FILE__), '/..')
+
+title = ARGV[0]
+tags = ARGV[1]
+
+unless title
+  puts %{Usage: #{$0} "The Post Title"[ "Tag 1, Tag 2"]}
+  exit(-1)
+end
+
+require File.join(ROOT_DIR, '/lib/slugalizer')
+datetime = (Time.now + 30*60).strftime('%Y-%m-%d_%H-%M')  # 30 minutes from now.
+slug = Slugalizer.slugalize(title)
+
+# E.g. 2006-07-16_11-41-batch-open-urls-from-clipboard.markdown
+path = "#{ROOT_DIR}/_posts/#{datetime}-#{slug}.markdown"
+
+header = <<-END
+---
+title: #{title}
+tags:  [#{tags}]
+---
+
+END
+
+File.open(path, 'w') {|f| f << header }
+system("mate", "-a", path)
