@@ -11,7 +11,7 @@ There are several guides out there, but I didn't find one that explained payment
 
 The first step is to create a US account. Follow Apple's own tutorial on how to [create an iTunes App Store account without a credit card](http://support.apple.com/kb/HT2534).
 
-Basically you switch the store settings to the US Store, start purchasing a free iPhone app such as [Remote](http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=284417350&mt=8) and create an account with "None" as the payment option.
+Basically you switch the store settings to the US Store, start purchasing a free iPhone app such as Remote ([iTunes Store link](http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=284417350&mt=8)) and create an account with "None" as the payment option.
 
 You need to enter US address details, such as those of any hotel in the USA.
 
