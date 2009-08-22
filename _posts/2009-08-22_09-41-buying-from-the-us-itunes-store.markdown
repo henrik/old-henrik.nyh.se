@@ -19,17 +19,15 @@ The iTunes Store handles [plus-addressing](http://en.wikipedia.org/wiki/Plus_add
 
 ## Payment
 
-If you don't have a US credit card, you can still use a Gift Certificate purchased by someone else in the US Store.
+If you don't have a US credit card, you can still use a gift certificate purchased by someone else in the US Store.
 
-The iTunes Store has [Gift Cards as well as Gift Certificates](http://www.apple.com/itunes/store/gifts.html). Gift Cards are physical cards: to my knowledge you will not receive them by email. Gift Certificates, on the other hand, are sent immediately by email.
+The iTunes Store has [gift cards as well as gift certificates](http://www.apple.com/itunes/store/gifts.html). gift *cards* are physical cards: to my knowledge you will not receive them by email. Gift *certificates*, on the other hand, are sent immediately by email.
 
-So if you have a contact in the US, have them email you a Gift Certificate ([iTunes Store link](https://phobos.apple.com/WebObjects/MZFinance.woa/wa/buyLandingPage)).
+So if you have a contact in the US, have them email you a gift certificate ([iTunes Store link](https://phobos.apple.com/WebObjects/MZFinance.woa/wa/buyLandingPage)).
 
-There are also Gift Cards available [on eBay](http://shop.ebay.com/?_nkw=us+itunes+gift), and some sellers state they will email you the code. I have no experience with this. Their price will be a few dollars above the face value.
+There are also gift cards available [on eBay](http://shop.ebay.com/?_nkw=us+itunes+gift), and some sellers state they will email you the code. I have no experience with this. Their price will be a few dollars above the face value.
 
-## In closing
-
-This worked fine for me.
+## Syncing
 
 I have not tried this with anything I sync to the iPhone. [This discussion thread](http://discussions.apple.com/thread.jspa?messageID=7851413) suggests that you can sync to the iPhone from multiple iTunes Store accounts as long as the computer is authorized for all of them.
 
