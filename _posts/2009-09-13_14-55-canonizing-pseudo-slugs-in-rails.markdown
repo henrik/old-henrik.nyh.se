@@ -15,9 +15,9 @@ class Item < ActiveRecord::Base
 end
 {% endhighlight %}
 
-The Rails URL helpers will now use this parameter in URLs instead of just the `id`. Controller actions can usually be left unchanged since `ActiveRecord::Base#find` will run `to_i` on the string, lopping off the slug.
+The Rails URL helpers will now use this parameter in URLs instead of just the `id`. Controller actions can usually be left unchanged since `ActiveRecord::Base#find` will run `to_i` on the parameter string, lopping off the slug.
 
-These pseudo-slugs let people mess with you, though. They could pass your `http://example.com/items/1-foo` URL to someone else as `http://example.com/items/1-ugly-ass-foo` and it will work fine. It may even be indexed by search engines.
+These pseudo-slugs let people mess with you, though. They could pass your `http://example.com/items/1-foo` URL to someone else as `http://example.com/items/1-ugly-ass-foo` and it will work fine. It may even be indexed by search engines that way.
 
 This is easy to overlook, but the solution is fairly obvious and simple:
 
