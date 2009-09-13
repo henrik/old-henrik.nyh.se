@@ -22,6 +22,6 @@ Simply change the code for displaying the time into something like this:
 <?php } ?>
 {% endhighlight %}
 
-The <code>60*60*24*7</code> bit is the cut-off age – 7 days, in seconds.
+The `60*60*24*7` bit is the cut-off age – 7 days, in seconds.
 
 Incidentally, that blog displays the absolute time in user local time per <a href="http://ecmanaut.blogspot.com/2006/01/ajax-date-time-time-zones-best.html">Johan's insights</a>. I'll likely blog that later.
