@@ -40,7 +40,7 @@ function fetch($url) {
 	curl_setopt($curl, CURLOPT_URL, $url);
 	curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, $timeout);
 	curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-        $html = curl_exe_c($curl);
+        $html = curl_exec($curl);
 	$content_type = curl_getinfo($curl, CURLINFO_CONTENT_TYPE);
 	curl_close($curl);
 	return array($html, $content_type);
@@ -62,7 +62,5 @@ echo $html;
 This piece of code just mirrors the content as well as the content-type of anything on <a href="http://malesca.tumblr.com">http://malesca.tumblr.com</a> to <a href="http://henrik.nyh.se/tumble">http://henrik.nyh.se/tumble</a>. Fixes links in the RSS feed as well. Pretty neat.
 
 You obviously need a PHP with <a href="http://php.net/curl">libcurl</a>.
-
-<code>curl_exe_c</code> in the code above should really be <code>curl_exec</code>, but I had to rewrite it to work around some highlighting engine bug I've yet to track down.
 
 You'll likely want to change the <code>$from</code> and <code>$unto</code> values at the top, as well as the URL in the <code>.htaccess</code> rewrite rule.
