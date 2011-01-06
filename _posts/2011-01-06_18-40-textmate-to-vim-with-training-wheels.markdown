@@ -106,7 +106,7 @@ with my caret somewhere in "ipsum", I could do `ciw` (change in word) to delete 
 
 So `c`(hange) or `d`(elete) is the operator, the action I want to perform; and `iw` is the motion, describing the scope or object of that action.
 
-These are just some examples. Instead of `c`, I could invoke actions like `>` (indent), `gU` (make uppercase) and many more. Instead of the motion `iw`, I could use `ip` (in paragraph), `tx` (till the next letter "x"), `/foo↩` (until the next match of a regular expression), `)` (until the end of the sentence) and more.
+These are just some examples. Instead of `c`, I could invoke actions like `>` (indent), `gU` (make uppercase) and many more. Instead of the motion `iw`, I could use `tx` (till the next letter "x"), `/foo↩` (until the next match of a regular expression), `)` (until the end of the sentence), `'m` (until the mark "m") and more.
 
 There are plugins that add motions like ["at this indentation level"](http://www.vim.org/scripts/script.php?script_id=3037) or ["in this Ruby block"](http://www.vim.org/scripts/script.php?script_id=3382).
 
