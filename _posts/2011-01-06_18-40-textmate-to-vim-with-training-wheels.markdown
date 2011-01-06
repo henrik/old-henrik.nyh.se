@@ -155,6 +155,8 @@ Though I started out with Janus, I have made a lot of customizations.
 [My dotfiles](https://github.com/henrik/dotfiles) are available on GitHub.
 If you see something you like, you can create a `~/.vimrc.local` or `~/.gvimrc.local` which Janus will load. Or just fork and modify the existing dotfiles.
 
+If you set up your own dotfiles from scratch, I very much recommend using [Pathogen](http://www.vim.org/scripts/script.php?script_id=2332) so each plugin keeps to its own directory instead of putting files all over the place. It goes well with Git submodules.
+
 
 ## Learning Vim
 
