@@ -3,6 +3,18 @@ require 'lib/slugalizer'
 
 FEED_URL = "http://feeds.feedburner.com/ThePugAutomatic"
 
+# Force Haml to use RDiscount for the :markdown filter.
+# Can actually be a Markdown module in any namespace, but that's just dirty.
+module Haml
+  module Markdown
+    include Haml::Filters::Base
+    def render(text)
+      ::RDiscount.new(text).to_html
+    end
+  end
+end
+
+
 module Helpers
 
   def array_to_sentence(array)
