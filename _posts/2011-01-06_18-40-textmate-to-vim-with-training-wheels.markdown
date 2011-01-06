@@ -82,7 +82,7 @@ in Vim, I could type
 
 `Y` to copy (yank) the line, `p` to paste it below, `V` to select that line, `r=` to replace each character with "=".
 
-And since you can do a lot of things with the primitives, there's little need for TextMate's modifier-heavy keyboard shortcuts. I actually remember Vim commands by name – with TextMate, it's mostly chord muscle memory.
+And since you can do a lot of things with the primitives, there's little need for TextMate's modifier-heavy keyboard shortcuts.
 
 Vim has **operators and motions**, which are particularly lovely primitives that let you manipulate text with a kind of action-object model. If I have the text
 
