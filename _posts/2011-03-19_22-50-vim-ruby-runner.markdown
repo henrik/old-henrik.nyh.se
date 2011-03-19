@@ -34,8 +34,7 @@ Just like with `:help`, one and the same output buffer is reused per tab page.
 
 ## Comparison and caveats
 
-The main benefit this has in comparison to the TextMate command is, of course, that it runs in Vim ;)
-The mappings and the reused output buffer let you work very quickly and efficiently, with all the power of Vim available.
+The main benefit in comparison to the TextMate command is, of course, that it runs in Vim ;)
 
 In some ways, though, this plugin compares unfavorably to TextMate.
 
