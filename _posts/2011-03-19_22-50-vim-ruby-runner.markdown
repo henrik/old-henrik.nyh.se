@@ -7,11 +7,11 @@ When I [switched to Vim from TextMate](/2011/01/textmate-to-vim-with-training-wh
 
 There are ways to execute Ruby code from a Vim buffer, such as `:w ! ruby` or `:! ruby %`, which you could map to any shortcut, but they have annoying limitations.
 
-Hence, I've been tinkering with a better Vim solution for a while in [my dotfiles](https://github.com/henrik/dotfiles). It finally felt mature enough to pack into a plugin, so I did:
+Hence, I've been tinkering with a better solution for a while in [my dotfiles](https://github.com/henrik/dotfiles). It finally felt mature enough to pack into a plugin, so I did:
 
 [![Screenshot](http://dl.dropbox.com/u/546793/blog/RubyRunner.png)](https://github.com/henrik/vim-ruby-runner)
 
-Get it at GitHub: <https://github.com/henrik/vim-ruby-runner>
+Get it from GitHub: <https://github.com/henrik/vim-ruby-runner>
 
 
 ## Usage
@@ -22,7 +22,7 @@ The default keybindings are only available in buffers with filetype `ruby`. I re
 
 so you can set that filetype with a simple `:FR`.
 
-When you have a Ruby buffer, <code class="kb">⌘r</code> (lowercase r) will execute its contents (even it is an unnamed, unsaved buffer) as Ruby code and output the results into a new split buffer.
+When you have a Ruby buffer, <code class="kb">⌘r</code> (lowercase r) will execute its contents (even if it is an unnamed, unsaved buffer) as Ruby code and output the results into a new split buffer.
 
 The output buffer gains focus, and you can hit <code class="kb">⌘r</code> again to close it.
 
@@ -32,12 +32,12 @@ If you're in input mode, you'll even stay in that mode. So you can keep hitting 
 Just like with `:help`, one and the same output buffer is reused per tab page.
 
 
-## Caveats and comparison
+## Comparison and caveats
 
 The main benefit this has in comparison to the TextMate command is, of course, that it runs in Vim ;)
 The mappings and the reused output buffer let you work very quickly and efficiently, with all the power of Vim available.
 
-In some ways, though, this plugin compares unfavorable to the equivalent TextMate feature.
+In some ways, though, this plugin compares unfavorably to TextMate.
 
 Whereas TextMate will show you output incrementally, I [haven't been able](http://stackoverflow.com/questions/5329931/in-vim-can-i-stream-the-output-of-e-g-w-ruby-into-a-buffer-line-by-line) to find a good way to achieve that in Vim.
 The Vim window will be unresponsive while the script executes, and will only show the output all at once after completion.
