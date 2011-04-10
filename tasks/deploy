@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-jekyll && rsync -avz --delete _site/ nyh:henrik.nyh.se/jekyll
+jekyll && rsync -avz --delete _site/ poly:/srv/www/henrik.nyh.se/public_html/jekyll
