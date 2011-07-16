@@ -13,7 +13,7 @@ The reason usually given is security. By not revealing to an attacker whether th
 
 That's right as far as it goes, but I would argue that this is a case where usability should trump security.
 
-As a user, it's very frustrating to repeatedly fail to log in without knowing if you're using the wrong one out of several usernames or emails, or the wrong one out of several passwords. Or the wrong invitation.
+As a user, it's very frustrating to repeatedly fail to log in without knowing if you're using the wrong one out of several usernames or emails, or the wrong one out of several passwords. Or the wrong invitation. If you even have an account.
 
 [TripAdvisor](http://tripadvisor.com) gets this right:
 
