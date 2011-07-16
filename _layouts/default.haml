@@ -1,19 +1,19 @@
-!!!strict
-
-%html{html_attrs}
+!!!5
+%html(lang="en" class="no-js")
 
   %head
     %meta{ :"http-equiv" => 'Content-Type', :content => 'text/html; charset=utf-8' }
     %title= page.title.match(/The Pug Automatic$/) ? page.title : "#{page.title} – The Pug Automatic"
     %meta{ :name => 'author', :content => 'Henrik Nyh (http://henrik.nyh.se)' }
     %link{ :href => FEED_URL, :rel => "alternate", :title => "The Pug Automatic", :type => "application/atom+xml" }
-    
+
     %link{ :rel => "openid.server",   :href => "http://www.myopenid.com/server" }
     %link{ :rel => "openid.delegate", :href => "http://henriknyh.myopenid.com/" }
-    
+
     %link{ :rel => "stylesheet", :type => 'text/css', :href => '/css/syntax.css' }
     %link{ :rel => "stylesheet", :type => 'text/css', :href => '/css/screen.css' }
-    
+
+    %script{ :src => '/js/modernizr.min.js', :type => 'text/javascript' }
     %script{ :src => '/js/jquery.min.js', :type => 'text/javascript' }
     %script{ :src => '/js/jquery.cookie.js', :type => 'text/javascript' }
     %script{ :src => '/js/jquery.twitter.js', :type => 'text/javascript' }
@@ -21,49 +21,49 @@
 
   %body
     #site
-    
-      #sidebar
 
-        #title
-          %p= link_to('<img src="/images/pug.png" alt="" />', "/")
+      %aside
+
+        %header
+          %p= link_to('<img src="/images/pug.png" alt="">', "/")
           %p= link_to("The Pug Automatic", "/")
 
-        %p
-          == A blog by #{link_to('Henrik Nyh', '/about')} mostly on #{tag_link 'Ruby'}, #{tag_link 'Rails', 'Ruby on Rails'} and #{tag_link 'OS X'} automation.
-          = link_to('Subscribe by RSS', FEED_URL), '.'
-          
-        %form#search{ :method => 'get', :action => 'http://www.google.com/search' }
-          %input.text{ :type => 'text', :name => 'q' }
-          %input{ :type => 'hidden', :name => 'sitesearch', :value => 'henrik.nyh.se' }
-          %input.button{ :type => 'submit', :value => 'Google' }
-        
-        = tag_cloud(site.tags)
+        %nav
+          %p
+            == A blog by #{link_to('Henrik Nyh', '/about')} mostly on #{tag_link 'Ruby'}, #{tag_link 'Rails', 'Ruby on Rails'} and #{tag_link 'OS X'} automation.
+            = link_to('Subscribe by RSS', FEED_URL) + '.'
+
+          %form#search{ :method => 'get', :action => 'http://www.google.com/search' }
+            %input.text{ :type => 'text', :name => 'q' }
+            %input{ :type => 'hidden', :name => 'sitesearch', :value => 'henrik.nyh.se' }
+            %input.button{ :type => 'submit', :value => 'Google' }
+
+          = tag_cloud(site.tags)
 
         #github
           %a{ :href => 'http://github.com/henrik' }
             %img{ :src => '/images/github.png', :alt => 'github.com/henrik' }
-            
+
         #tweets
-          
-      #content= content
-      
-      %p#footer
-        Powered by
-        = link_to('Jekyll', 'http://github.com/henrik/jekyll')
-        and
-        = link_to('Disqus', 'http://disqus.com'), '.'
-        = link_to('View source', 'http://github.com/henrik/henrik.nyh.se'), '.'
+
+      %article= content
+
+      %footer
+        %p
+          Powered by
+          = link_to('Jekyll', 'http://github.com/henrik/jekyll')
+          and
+          = link_to('Disqus', 'http://disqus.com') + '.'
+          = link_to('View source', 'http://github.com/henrik/henrik.nyh.se') + '.'
 
       :javascript
-      
+
         // Google Analytics
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
         document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-        </script>
-        <script type="text/javascript">
         try {
-        var pageTracker = _gat._getTracker("UA-8429899-1");
-        pageTracker._trackPageview();
+          var pageTracker = _gat._getTracker("UA-8429899-1");
+          pageTracker._trackPageview();
         } catch(err) {}
 
         // Disqus

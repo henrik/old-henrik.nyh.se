@@ -2,16 +2,17 @@
 layout: default
 ---
 #post
-  =header page.title
-  %p.subtitle
-    Written
-    = page.date.strftime("%B %d, %Y at %H:%M %Z") + '.'
-    Tagged
-    = tag_links(page.tags) + "."
-   
-  -# Without the squiggly, Haml will indent highlighted code. 
+  %header
+    =header page.title
+    %p.subtitle
+      Written
+      %time= page.date.strftime("%B %d, %Y at %H:%M %Z") + '.'
+      Tagged
+      = tag_links(page.tags) + "."
+
+  -# Without the squiggly, Haml will indent highlighted code.
   ~ content
-  
+
   #older_and_newer
     - if page.next
       %p
@@ -21,7 +22,7 @@ layout: default
       %p
         %strong Older:
         =post_link(page.previous)
-  
+
   #disqus_thread
   :javascript
     var disqus_developer = location.host.match(/\.dev$|^localhost/) ? 1 : 0;

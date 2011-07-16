@@ -4,7 +4,12 @@
 *
   margin: 0
   padding: 0
-  
+
+/* HTML5 elements in IE
+/* https://github.com/paulirish/html5-boilerplate/blob/362d0b7/css/style.css#L35-37
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display: block
+
 body
   background-color: #fff
   font: 13.34px helvetica, arial, clean, sans-serif
@@ -44,7 +49,7 @@ a
 table
   font-size: inherit
   font: 100%
-  
+
 blockquote
   margin: 10px 20px
   font-style: italic
@@ -63,12 +68,12 @@ div.year
     font-size: 250%
   h3.month, h2.tag
     margin-top: 0
-    
+
 ul.posts
   list-style-type: none
   margin-bottom: 2em
   li
-    line-height: 1.75em  
+    line-height: 1.75em
     strong.date
       color: #888
       margin-right: 5px
@@ -112,12 +117,12 @@ ol#tag-cloud
   width: 900px
   margin: 0 auto 2em auto
 
-  #sidebar
+  aside
     float: right
     width: 260px
     margin-right: 1em
     margin-bottom: 45px
-    #title
+    header
       color: #DAA520
       font-weight: bold
       margin-bottom: 10px
@@ -149,18 +154,18 @@ ol#tag-cloud
           height: 0
           display: block
           margin: 5px 0 -15px 0
-            
-  #content
+
+  article
     width: 550px
     margin-left: 1em
 
-  #footer
+  footer
     clear: both
     margin: 80px 0 -5px 0
     font-size: 80%
     a
       color: #8085C1
-    
+
 
 /* About
 
@@ -181,7 +186,7 @@ ol#tag-cloud
     font-size: 13px
     a
       color: #777
-      
+
   .center
     text-align: center
   img.bordered
@@ -194,7 +199,7 @@ ol#tag-cloud
     margin: 20px 10px
     h5
       margin: 6px 0
-    
+
   /* standard
   pre, code
     font: 12px Monaco, sans-serif
@@ -227,7 +232,7 @@ ol#tag-cloud
       -moz-border-radius: 5px
       -webkit-border-radius: 5px
       background: #EEE
-  
+
   /* terminal
 
   pre.terminal
