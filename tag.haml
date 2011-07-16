@@ -8,10 +8,10 @@ title: Tags
   =header "Tags"
 
   - site.tags.sort_by {|tag,_| tag.downcase }.each do |tag,posts|
-    .tag
+    %section.tag
       %h2.tag{ :id => slug(tag) }=h tag
       %ul.posts
         - posts.each do |post|
           %li
-            %strong.date= post.date.strftime('%b %d, %Y')
+            %time{ :datetime => post.date.strftime("%Y-%m-%d") }= post.date.strftime('%b %d, %Y')
             = post_link(post)
