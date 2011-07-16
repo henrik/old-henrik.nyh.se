@@ -6,6 +6,7 @@ tags:
 - Ruby
 - Annoyances
 - Ruby on Rails
+- UI
 ---
 I'm not a big fan of password confirmation in signup forms. Usually you see something like this:
 
