@@ -27,7 +27,7 @@ Also, if you do insist on not telling the user, please think things through.
 
 ![Password reset form stating "Invalid username or email".](http://dl.dropbox.com/u/546793/blog/2011-07-16-usability-trumps-security/pivotal-pwreset.png)
 
-If other pages, such as user profiles or password reset can tell if an account exists, your page is only one request safer. Any attacker worth their [salt](http://en.wikipedia.org/wiki/Salt_\(cryptography\)) can first try that page to find an existing account, then attack your login page.
+If other pages, such as user profiles or password reset, can tell if an account exists, your page is only one request safer. Any attacker worth their [salt](http://en.wikipedia.org/wiki/Salt_\(cryptography\)) can first try that page to find an existing account, then attack your login page.
 
 Another common and amusing miss is to be unspecific if the username is known, but specific if unknown, such as on Flickr. Incorrect password:
 
