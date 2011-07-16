@@ -147,7 +147,7 @@ Make sure this directory is earlier in your `$PATH` path than `/usr/bin` is.
 
 Install Janus with
 
-    curl https://github.com/carlhuda/janus/raw/master/bootstrap.sh -o - | sh
+    curl https://raw.github.com/carlhuda/janus/master/bootstrap.sh -o - | sh
 
 The install script will rename (not overwrite) any pre-existing Vim dotfiles.
 
