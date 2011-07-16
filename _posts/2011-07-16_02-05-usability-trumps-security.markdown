@@ -21,7 +21,9 @@ As a user, it's very frustrating to repeatedly fail to log in without knowing if
 
 There are definitely cases where it's the user-friendly thing not to reveal if a username or email is in use. Such as on a dating site, where the user may be embarrassed or worse to be revealed as a member.
 
-And if you do insist on not telling the user, please think things through.
+Obviously security is important. But this is [security by obscurity](http://en.wikipedia.org/wiki/Security_through_obscurity). An attacker is unlikely to try email addresses entirely at random. They will probably know or suspect that the account exists before starting out. And your site should probably not rely on the username being a secret for security.
+
+Also, if you do insist on not telling the user, please think things through.
 
 ![Password reset form stating "Invalid username or email".](http://dl.dropbox.com/u/546793/blog/2011-07-16-usability-trumps-security/pivotal-pwreset.png)
 
@@ -35,4 +37,4 @@ Incorrect username:
 
 ![Failed login stating "This ID is not yet taken."](http://dl.dropbox.com/u/546793/blog/2011-07-16-usability-trumps-security/yahoo-wrongname.png)
 
-Though it may be [security by obscurity](http://en.wikipedia.org/wiki/Security_through_obscurity), I'm not saying it's objectively wrong to be vague about what credential is incorrect. But it is often user-unfriendly, and my opinion is that this is a case where usability trumps security.
+I'm not saying it's objectively wrong to be vague about what credential is incorrect. But it is often user-unfriendly, and my opinion is that this is a case where usability trumps security.
