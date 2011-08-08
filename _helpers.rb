@@ -62,6 +62,7 @@ module Helpers
     tag_counts_sizes = tag_counts.map { |tag, count|
       # http://blogs.dekoh.com/dev/2007/10/29/choosing-a-good-font-size-variation-algorithm-for-your-tag-cloud/
       weight = (Math.log(count)-Math.log(min))/(Math.log(max)-Math.log(min))
+      weight = 1 if weight.nan?  # e.g. same max as min
       size = from + ((unto-from)*weight).round
       [tag, count, size]
     }
