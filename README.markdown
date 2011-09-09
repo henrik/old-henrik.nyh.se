@@ -4,6 +4,32 @@ This directory contains data for my blog, [The Pug Automatic](http://henrik.nyh.
 
 It's automatically transformed by my mutated version of [Jekyll](http://github.com/henrik/jekyll) (Hyde? Mr. Haml?) into a static site. Jekyll was created by [Tom Preston-Werner](http://tom.preston-werner.com/).
 
+
+## Setup
+
+I keep my version of Jekyll in `~/Projects/jekyll` and add its `bin` dir to my `PATH`:
+
+    export PATH=~/Projects/jekyll/bin:$PATH
+
+Install gem dependencies:
+
+    # Possibly incomplete list. Should introduce Bundler or switch blog engine next time.
+    gem install activesupport --version=2.1.0
+    gem install RedCloth open4 rdiscount haml sass
+
+Install Pygments for syntax highlighting:
+
+    sudo easy_install Pygments
+
+Generate blog with:
+
+    jekyll
+
+If it looks fine, generate and deploy with:
+
+    tasks/deploy
+
+
 ## License
 
 The following directories and their contents are copyrighted by me, Henrik Nyh, unless otherwise mentioned. You may not reuse anything in them without my permission:
