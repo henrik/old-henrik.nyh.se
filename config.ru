@@ -9,10 +9,9 @@
 app = lambda do |env|
 
   # Injection safe: /../../x will request /x.
-  path = Rack::Utils.unescape(env['PATH_INFO'])
-  index_file = @root + "#{path}/index.html"
-  html_file = @root + "#{path}.html"
-  file = @root + path
+  file = @root + Rack::Utils.unescape(env['PATH_INFO'])
+  index_file = "#{file}/index.html"
+  html_file  = "#{file}.html"
 
   if File.exists?(index_file)
     [200, {'Content-Type' => 'text/html'}, File.read(index_file)]
