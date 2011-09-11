@@ -25,6 +25,8 @@ Generate blog with:
 
     jekyll
 
+The `config.ru` files means you can see the generated site locally with [Pow](http://pow.cx/) or any other Rack-compatible server. Or use Apache.
+
 If it looks fine, generate and deploy with:
 
     tasks/deploy
