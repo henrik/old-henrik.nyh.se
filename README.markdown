@@ -13,9 +13,8 @@ I keep my version of Jekyll in `~/Projects/jekyll` and add its `bin` dir to my `
 
 Install gem dependencies:
 
-    # Possibly incomplete list. Should introduce Bundler or switch blog engine next time.
-    gem install activesupport --version=2.1.0
-    gem install RedCloth open4 rdiscount haml sass
+    gem install bundler
+    bundle
 
 Install Pygments for syntax highlighting:
 
