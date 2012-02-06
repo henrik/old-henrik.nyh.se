@@ -1,7 +1,7 @@
 require 'cgi'
 require 'lib/slugalizer'
 
-FEED_URL = "http://feeds.feedburner.com/ThePugAutomatic"
+FEED_URL = "/atom.xml"
 
 # Force Haml to use RDiscount for the :markdown filter.
 # Can actually be a Markdown module in any namespace, but that's just dirty.
