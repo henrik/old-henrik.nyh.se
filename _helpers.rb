@@ -1,5 +1,5 @@
 require 'cgi'
-require 'lib/slugalizer'
+require_relative 'lib/slugalizer'
 
 FEED_URL = "/atom.xml"
 

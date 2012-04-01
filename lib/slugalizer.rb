@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# encoding: utf-8
 #
 # Slugalizer
 # http://github.com/henrik/slugalizer
