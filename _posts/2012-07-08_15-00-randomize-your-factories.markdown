@@ -5,7 +5,7 @@ tags:  [FactoryGirl, Factories, Testing, Ruby on Rails]
 
 [FactoryGirl](https://github.com/thoughtbot/factory_girl/) is a Ruby library to create data for tests.
 
-I read Arjan van der Gaag's [FactoryGirl Tips and Tricks](http://arjanvandergaag.nl/blog/factory_girl_tips.html) post the other day and found myself disagreeing with a few of the points. Mainly the one where Arjan recommends not using randomized attribute values, because they can cause unexpected results in tests.
+I read Arjan van der Gaag's [FactoryGirl Tips and Tricks](http://arjanvandergaag.nl/blog/factory_girl_tips.html) post the other day and found myself disagreeing with a few of the points. Mainly the one where Arjan recommends not using randomized attribute values because they can cause unexpected results in tests.
 
 A randomized attribute value could be something like
 
