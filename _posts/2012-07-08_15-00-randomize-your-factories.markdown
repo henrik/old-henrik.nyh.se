@@ -40,9 +40,9 @@ end
 FactoryGirl.build(:female_user)  # Definitely female.
 {% endhighlight %}
 
-I think it is overall a good thing not to know the specific attributes. If you're writing a test that applies to users, you fabricate a `:user`. If you're writing a test that applies specifically to female users, you fabricate a `:female_user`, or set that attribute. If you write a test that makes no mention of the user gender, it should pass no matter the gender.
+I think you should only ever rely on the `:user` factory to give you a user. Possibly you could also assume that it's a valid one, and that it has the object graph that a real user would have. But no specific, implicit set of valid attributes should be assumed.
 
-You should only ever rely on the `:user` factory to give you a user. Possibly you could also assume that it's a valid one, and that it has the object graph that a real user would have. But no specific, implicit set of valid attributes should be assumed.
+If you're writing a test that applies to users, you fabricate a `:user`. If you're writing a test that applies specifically to female users, you fabricate a `:female_user`, or set that attribute. If you write a test that makes no mention of the user gender, it should pass no matter the gender.
 
 If you do assume certain attributes, your factory is more like the [Ruby on Rails fixtures](http://guides.rubyonrails.org/testing.html#the-low-down-on-fixtures) that many people use factories to get away from.
 
