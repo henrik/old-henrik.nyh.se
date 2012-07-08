@@ -74,3 +74,17 @@ Once you've discovered this bug, you should of course write a test specifically 
 Curiously, Arjan's very next point is that you should test for explicit values, and not rely on factories to have certain implicit values. That is really much of my point. Randomized attribute values enforce this by not letting you rely on them even if you try.
 
 Again, I'm not saying I think random test failures are great. Only that they're better than having a bug but no test failures whatsoever.
+
+## Update – July 8, 2012 at 19:30 CEST:
+
+[Arjan's post](http://arjanvandergaag.nl/blog/factory_girl_tips.html) was updated to address these points:
+
+> One might argue (…) that random values help you discover bugs. While possible, that obviously means you have a bigger problem: holes in your test suite. (…) True, a cryptic error is better than no error, but randomised factories remain a poor substitute for proper unit tests, code review and TDD to prevent these problems.
+>
+> Randomised factories are therefore not only not worth the effort, they even give you false confidence in your tests, which is worse than having no tests at all.
+
+Even if you do "proper unit tests, code review and TDD" as diligently as anyone, you will make mistakes and have bugs. And given those bugs, you have a chance of finding them sooner by doing it the way I described. I think I made it pretty clear above, but I will reiterate that I don't see randomized factories as a substitute for anything other than human infallibility. It's one more safety net.
+
+If your tests and code review are good enough, you won't ever get the random test failures. You only get them when you mess up. Do TDD and code review, but do this too.
+
+I think that Arjan's argument about giving false confidence in your tests is the strongest one. I can only say that I do this precisely because I have little confidence in my tests, or anyone else's. I don't rig the extra safety net so I can take more risks; I do it because I know that sooner or later, no matter how hard I try, I'll slip.
