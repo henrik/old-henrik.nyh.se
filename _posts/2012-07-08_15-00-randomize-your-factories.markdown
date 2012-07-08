@@ -44,7 +44,7 @@ I think you should only ever rely on the `:user` factory to give you a user. Pos
 
 If you're writing a test that applies to users, you fabricate a `:user`. If you're writing a test that applies specifically to female users, you fabricate a `:female_user`, or set that attribute. If you write a test that makes no mention of the user gender, it should pass no matter the gender.
 
-If you do assume certain attributes, your factory is more like the [Ruby on Rails fixtures](http://guides.rubyonrails.org/testing.html#the-low-down-on-fixtures) that many people use factories to get away from.
+If you do assume certain attributes, your factory is more like the [Ruby on Rails fixtures](http://guides.rubyonrails.org/testing.html#the-low-down-on-fixtures) that many people use factories to get away from. If you're writing a test that is explicitly for any user, what's the value in implicitly knowing their sex? This post is making the case that there is value in making sure you *don't* know. This is, of course, also one advantage of factories over fixtures.
 
 It's true that randomized attributes means tests can fail randomly. That's certainly not ideal. But the alternative is that your app has that same bug, only without ever failing.
 
