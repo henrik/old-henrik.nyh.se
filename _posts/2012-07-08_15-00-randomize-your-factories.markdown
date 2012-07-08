@@ -71,6 +71,6 @@ Certainly, these failures can be a bit frustrating, because they're harder to re
 
 Once you've discovered this bug, you should of course write a test specifically for it, and one that fails predictably. Randomized attributes are certainly no substitute for that. What they are is a safety net, making up somewhat for the fact that you will make mistakes.
 
-Curiously, Arjan's very next point is that you should test for explicit values, and not rely on factories to have certain implicit values, which is really much of my point. Randomized attribute values enforce this by not letting you rely on them even if you try.
+Curiously, Arjan's very next point is that you should test for explicit values, and not rely on factories to have certain implicit values. That is really much of my point. Randomized attribute values enforce this by not letting you rely on them even if you try.
 
 Again, I'm not saying I think random test failures are great. Only that I think they're better than having a bug but no test failures.
