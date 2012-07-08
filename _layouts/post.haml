@@ -6,7 +6,7 @@ layout: default
     =header page.title
     %p.subtitle
       Written
-      %time= page.date.strftime("%B %d, %Y at %H:%M %Z") + '.'
+      %time= page.date.strftime("%B %-d, %Y at %H:%M %Z") + '.'
       Tagged
       = tag_links(page.tags) + "."
 
