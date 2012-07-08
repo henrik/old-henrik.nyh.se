@@ -73,4 +73,4 @@ Once you've discovered this bug, you should of course write a test specifically 
 
 Curiously, Arjan's very next point is that you should test for explicit values, and not rely on factories to have certain implicit values. That is really much of my point. Randomized attribute values enforce this by not letting you rely on them even if you try.
 
-Again, I'm not saying I think random test failures are great. Only that I think they're better than having a bug but no test failures.
+Again, I'm not saying I think random test failures are great. Only that they're better than having a bug but no test failures.
