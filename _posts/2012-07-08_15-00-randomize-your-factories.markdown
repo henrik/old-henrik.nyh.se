@@ -40,9 +40,9 @@ end
 FactoryGirl.build(:female_user)  # Definitely female.
 {% endhighlight %}
 
-I think it is overall a good thing not to know the specific attributes. If you're writing a test that applies to users, you fabricate a `:user`. If you're writing a test that applies specifically to female users, you fabricate a `:female_user`, or set that attribute.
+I think it is overall a good thing not to know the specific attributes. If you're writing a test that applies to users, you fabricate a `:user`. If you're writing a test that applies specifically to female users, you fabricate a `:female_user`, or set that attribute. If you write a test that makes no mention of the user gender, it should pass no matter the gender.
 
-My opinion is that you should only ever rely on the `:user` factory to give you a user. Possibly you could also assume that it's a valid one, and that it has the object graph that a real user would have. But no specific, implicit set of valid attributes should be assumed.
+You should only ever rely on the `:user` factory to give you a user. Possibly you could also assume that it's a valid one, and that it has the object graph that a real user would have. But no specific, implicit set of valid attributes should be assumed.
 
 If you do assume certain attributes, your factory is more like the [Ruby on Rails fixtures](http://guides.rubyonrails.org/testing.html#the-low-down-on-fixtures) that many people use factories to get away from.
 
@@ -71,6 +71,6 @@ Certainly, these failures can be a bit frustrating, because they're harder to re
 
 Once you've discovered this bug, you should of course write a test specifically for it, and one that fails predictably. Randomized attributes are certainly no substitute for that. What they are is a safety net, making up somewhat for the fact that you will make mistakes.
 
-Curiously, Arjan's very next point is to test for explicit values, not relying on factories to have certain implicit values, which is really much of my point. Randomized attribute values enforce this by not letting you rely on them even if you try.
+Curiously, Arjan's very next point is that you should test for explicit values, and not rely on factories to have certain implicit values, which is really much of my point. Randomized attribute values enforce this by not letting you rely on them even if you try.
 
 Again, I'm not saying I think random test failures are great. Only that I think they're better than having a bug but no test failures.
