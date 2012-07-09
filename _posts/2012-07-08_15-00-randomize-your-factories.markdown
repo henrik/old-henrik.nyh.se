@@ -44,7 +44,13 @@ I think you should only ever rely on the `:user` factory to give you a user. Pos
 
 If you're writing a test that applies to users, you fabricate a `:user`. If you're writing a test that applies specifically to female users, you fabricate a `:female_user`, or set that attribute. If you write a test that makes no mention of the user gender, it should pass no matter the gender.
 
+
+## Fixtures vs. factories
+
 If you do assume certain attributes, your factory is more like the [Ruby on Rails fixtures](http://guides.rubyonrails.org/testing.html#the-low-down-on-fixtures) that many people use factories to get away from. If you're writing a test that is explicitly for any user, what's the value in implicitly knowing their sex? This post is making the case that there is value in making sure you *don't* know. This is, of course, also one advantage of factories over fixtures.
+
+
+## Random failures
 
 It's true that randomized attributes means tests can fail randomly. That's certainly not ideal. But the alternative is that your app has that same bug, only without ever failing.
 
@@ -75,6 +81,7 @@ Curiously, Arjan's very next point is that you should test for explicit values, 
 
 Again, I'm not saying I think random test failures are great. Only that they're better than having a bug but no test failures whatsoever.
 
+
 ## Update – July 8, 2012 at 19:30 CEST:
 
 [Arjan's post](http://arjanvandergaag.nl/blog/factory_girl_tips.html) was updated to address these points:
@@ -88,3 +95,10 @@ Even if you do "proper unit tests, code review and TDD" as diligently as anyone,
 If your tests and code review are good enough, you won't ever get the random test failures. You only get them when you mess up. Do TDD and code review, but do this too.
 
 I think that Arjan's argument about giving false confidence in your tests is the strongest one. I can only say that I do this precisely because I have little confidence in my tests, or anyone else's. I don't rig the extra safety net so I can take more risks; I do it because I know that sooner or later, no matter how hard I try, I'll slip.
+
+
+## Update – July 9, 2012 at 08:15 CEST:
+
+The random failures don't even have to be random. Or rather, they don't have to be hard to reproduce.
+
+I [just learned something from Mark Dodwell](https://twitter.com/madeofcode/status/222070153641328640) that I hadn't realized: when you have RSpec or MiniTest randomize the test order (`rspec --order random my_spec.rb`), the seed value that you get back isn't just for recreating that test order. That seed applies to any use of `Kernel#rand`, so it can make your random test failures reproducible too.
