@@ -130,7 +130,7 @@ This is not what I do myself – I just use Spork as described above – but it'
 
 After starting Guard, hit `p⏎` to pause the automatic "file modification listening".
 
-Rather than trigger when it detects modified files, Guard will now only trigger *if you tell it* a file has been modified. Add a mapping like:
+Rather than trigger when it detects modified files, Guard will now only trigger *if you tell it a file has been modified*. Add a mapping like:
 
 {% highlight vim %}
 :map ,x :call VimuxRunCommand("change ".expand("%"))<CR>
