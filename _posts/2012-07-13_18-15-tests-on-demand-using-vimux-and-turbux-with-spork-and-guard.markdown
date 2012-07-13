@@ -72,6 +72,14 @@ With Turbux, you're in control of when your tests run. You can save files all yo
 
 There's no confusion waiting for Guard to notice your changes. Tests run in a terminal window as if you typed the commands manually, so the current state is obvious.
 
+If you want to tweak some RSpec options (perhaps to provide a random seed) or set some environment variables for the tests, just change the command Turbux sends:
+
+{% highlight vim %}
+let g:turbux_command_rspec = 'FOO=bar rspec --order rand:123'
+{% endhighlight %}
+
+Or simply go to the test runner pane and write your own one-off commands there, or use the shell history to modify the commands you sent from Vim. Since it's just commands in a terminal, you get a lot of flexibility.
+
 One great feature of Turbux is that if it can't figure out a test to run, it will re-run the last one. So if you modify `user.rb` and trigger Turbux, it will run `user_spec.rb`. If you then open `en.yml` to localize some user attributes, triggering Turbux will run `user_spec.rb` again.
 
 
@@ -112,7 +120,7 @@ With Turbux, you're effectively running your tests in a regular terminal. Compar
 Luckily, Spork works fine divorced from Guard. And, indeed, married to Turbux. Just start Spork (I like to put it in a small pane in the bottom-right) and then make sure your tests connect to it. I do this in my `~/.vimrc`:
 
 {% highlight vim %}
-let g:turbux_command_rspec  = 'rspec --drb'
+let g:turbux_command_rspec = 'rspec --drb'
 {% endhighlight %}
 
 That's it. As long as you have a Spork running, your Turbux test runs will use it.
