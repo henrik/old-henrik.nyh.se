@@ -45,7 +45,7 @@ A simple example of what it lets you do is
 :call VimuxRunCommand("rspec spec/my_spec.rb")
 {% endhighlight %}
 
-By default, Vimux opens a new pane (and then reuses it) to run the command. As I always set up my workspace with about 80% editor on the left, 20% test runner on the right, I've configured it to just use the nearest pane instead:
+By default, Vimux opens a new pane (and then reuses it) to run the command. As I tend to manually set up my workspace with about 80% editor on the left, 20% test runner on the right, I've configured it to just use the nearest pane instead:
 
 {% highlight vim %}
 let g:VimuxUseNearestPane = 1
@@ -53,7 +53,7 @@ let g:VimuxUseNearestPane = 1
 
 ## Turbux
 
-Then there's [Turbux](https://github.com/jgdavey/vim-turbux) ([author's blog post](http://joshuadavey.com/post/15619414829/faster-tdd-feedback-with-tmux-tslime-vim-and)), which builds on Vimux (or a Vimux alternative named tslime.vim). Turbux adds mappings to Vim to run the current test in RSpec, test-unit or Cucumber. What's more, it uses some [rails.vim](https://github.com/tpope/vim-rails) magic to figure out that if you're in `models/user.rb`, you want to run `spec/models/user_spec.rb`.
+Then there's [Turbux](https://github.com/jgdavey/vim-turbux) ([author's blog post](http://joshuadavey.com/post/15619414829/faster-tdd-feedback-with-tmux-tslime-vim-and)), which builds on Vimux (or a Vimux alternative called tslime.vim). Turbux adds mappings to Vim to run the test you're currently editing, with RSpec (or test-unit or Cucumber), using Vimux. What's more, it uses some [rails.vim](https://github.com/tpope/vim-rails) magic to figure out that if you're in `models/user.rb`, you want to run `spec/models/user_spec.rb`.
 
 As I already use `,t` and `,T` for [Command-T](https://github.com/wincent/Command-T), I remapped Turbux to `,m` and `,M`:
 
