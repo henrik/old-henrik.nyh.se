@@ -92,7 +92,7 @@ Or if you want a more permanent mapping, you could do something like:
 :map ,x call VimuxRunLastCommand()<CR>
 {% endhighlight %}
 
-Vimux also lets you `:call VimuxPromptCommand()` if you prefer a prompt, though the function form lets you do things like refer to the current file:
+Vimux also lets you `:call VimuxPromptCommand()` if you prefer a prompt, though the function form lets you do things like refer to the current file dynamically:
 
 {% highlight vim %}
 :call VimuxRunCommand("cat ".expand("%"))
@@ -124,16 +124,16 @@ Guard::Spork does offer the convenience of reloading Spork automatically when ne
 
 ## Using Guard
 
-If you do want that convenience, though, you can even use Vimux with Guard.
+But if you do want that convenience, you can even use Vimux with Guard.
 
-This is not what I do myself, but it's an interesting option that I've looked into. It gets you the Guard::Spork autoreloading as well as any special file mapping you've set up in your `Guardfile`, while you still get to decide when to trigger a run.
+This is not what I do myself – I just use Spork as described above – but it's an interesting option that I've looked into. It gets you the Guard::Spork autoreloading as well as any special file mapping you've set up in your `Guardfile`, while you still get to decide when to trigger a run.
 
 After starting Guard, hit `p⏎` to pause the automatic "file modification listening".
 
-Rather than trigger when it detects modified files, Guard will now only trigger if you *tell it* a file has been modified. Add a mapping like:
+Rather than trigger when it detects modified files, Guard will now only trigger *if you tell it* a file has been modified. Add a mapping like:
 
 {% highlight vim %}
-:map ,x :call VimuxRunCommand("change ".expand("%")."")<CR>
+:map ,x :call VimuxRunCommand("change ".expand("%"))<CR>
 {% endhighlight %}
 
-Then when you hit `,x`, you will send the command `change current/file.rb` to Guard, filling in the current filename. Guard will see the file as modified and do its magic – figure out what to do from the `Guardfile`, then do it.
+Then when you hit `,x`, you will send the command `change current/file.rb` to Guard, filling in the current filename. Guard will see the file as modified and do its magic.
