@@ -9,7 +9,7 @@ My development environment these days is [Vim](http://henrik.nyh.se/2011/01/text
 
 Among other benefits (which I may write about later), this lets me split my terminal so I can run tests right next to my editor.
 
-I used to run tests with [Guard](https://github.com/guard/guard/). You start it with `guard` in a terminal, and when it detects that you saved a file, it runs the corresponding test. In your project's `Guardfile`, you can map files to tests any way you please. You might, for example, have it run the `user_spec.rb` whenever you modify `user_factory.rb`, in addition to any other mappings.
+I used to run tests with [Guard](https://github.com/guard/guard/). You start it in a terminal with `guard`, and when it detects that you saved a file, it runs the corresponding test. In your project's `Guardfile`, you can map files to tests any way you please. Typically, you'll have `models/user.rb` trigger `spec/models/user_spec.rb` and so on. You might also, for example, have it run `user_spec.rb` whenever you modify `user_factory.rb`.
 
 There's also [Spork](https://github.com/sporkrb/spork/), which loads your app up in a test server, so you don't have to wait for it to load on every test run. [Guard::Spork](https://github.com/guard/guard-spork) helps Guard make use of Spork.
 
