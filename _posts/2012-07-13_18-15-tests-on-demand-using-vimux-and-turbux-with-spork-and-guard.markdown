@@ -65,6 +65,8 @@ map <leader>M <Plug>SendFocusedTestToTmux
 
 What does `,M` (`SendFocusedTestToTmux`) do? The same as `rspec spec/my_spec.rb:123` – it tells RSpec the current line number, so it can run only the test(s) encompassing that line, and not the entire file.
 
+Another great feature of Turbux is that if it can't figure out a test to run, it will re-run the last one. So if you modify `user.rb` and trigger Turbux, it will run `user_spec.rb`. If you then open `en.yml` to localize some user attributes, triggering Turbux will run `user_spec.rb` again.
+
 
 ## The benefits of Vimux and Turbux over Guard
 
@@ -79,8 +81,6 @@ let g:turbux_command_rspec = 'FOO=bar rspec --order rand:123'
 {% endhighlight %}
 
 Or simply go to the test runner pane and write your own one-off commands there, or use the shell history to modify the commands you sent from Vim. Since it's just commands in a terminal, you get a lot of flexibility.
-
-One great feature of Turbux is that if it can't figure out a test to run, it will re-run the last one. So if you modify `user.rb` and trigger Turbux, it will run `user_spec.rb`. If you then open `en.yml` to localize some user attributes, triggering Turbux will run `user_spec.rb` again.
 
 
 ## Vimux without Turbux
