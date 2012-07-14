@@ -86,7 +86,7 @@ You'd have to restart Guard (including the app environment) to do the same.
 
 And because the commands are just sent to a shell in another pane, you have a lot of flexibility. If you want to try some one-off modifications to the commands, you can just edit them in that pane, using the shell history.
 
-If you have rake tasks to run some subset of tests, just run that task in the same pane, manually or with Vimux. You can run tests any way you like and still see them in the sane tmux pane.
+If you have rake tasks to run some subset of tests, just run that task in the same pane, manually or with Vimux. You can run tests any way you like and still see them in the same tmux pane.
 
 
 ## Vimux without Turbux
