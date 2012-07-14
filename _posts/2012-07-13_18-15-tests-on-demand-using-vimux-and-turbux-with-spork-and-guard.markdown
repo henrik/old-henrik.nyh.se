@@ -28,6 +28,8 @@ If you save one file while another test is running, it's queued up. This means t
 
 Sometimes, Guard gets the idea that you probably want to run all the tests, when you really don't.
 
+It happens that you accidentally forget you have a Guard running and start a second one, causing conflicts in tests that hit the database.
+
 Also, sometimes Guard's file detection gets choked up for whatever reason and won't run tests immediately when you save a file, or at all.
 
 All this is, of course, more of an annoyance if you have a slow test suite. But it gets pretty frustrating with sub-second tests as well, as you recalibrate your impatience.
@@ -80,7 +82,11 @@ If you want to tweak some RSpec options (perhaps to provide a random seed) or se
 let g:turbux_command_rspec = 'FOO=bar rspec --order rand:123'
 {% endhighlight %}
 
-Or simply go to the test runner pane and write your own one-off commands there, or use the shell history to modify the commands you sent from Vim. Since it's just commands in a terminal, you get a lot of flexibility.
+You'd have to restart Guard (including the app environment) to do the same.
+
+And because the commands are just sent to a shell in another pane, you have a lot of flexibility. If you want to try some one-off modifications to the commands, you can just edit them in that pane, using the shell history.
+
+If you have rake tasks to run some subset of tests, just run that task in the same pane, manually or with Vimux. You can run tests any way you like and still see them in the sane tmux pane.
 
 
 ## Vimux without Turbux
