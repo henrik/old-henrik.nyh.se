@@ -12,7 +12,7 @@ Now I have: I use [git-grep-vim](https://github.com/henrik/git-grep-vim) for pro
 
 I think it's unlikely that Vim will have a solution any time soon fully as convenient and well-integrated as in more modern editors. The per-buffer find-and-replace in Vim is dusted with enough special Vim magic that it won't match up perfectly with the syntax of project-wide search tools like ack, grep or git-grep. And in a large project, you need fast tools like those.
 
-So while I I don't know of a solution that is on par with the convenience of search-and-replace in other editors, I do consider this one more convenient than switching to another editor – for a while I used TextMate alongside Vim for project find-and-replace.
+So while I don't know of a solution that is on par with the convenience of search-and-replace in other editors, I do consider this one more convenient than switching to another editor – for a while I used TextMate alongside Vim for project-wide find-and-replace.
 
 And as usual with Vim, you get a lot of power you may not find in those other editors.
 
