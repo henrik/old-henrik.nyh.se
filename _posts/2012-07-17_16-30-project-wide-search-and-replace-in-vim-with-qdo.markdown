@@ -84,18 +84,18 @@ There's a bunch of commands to open items from the quickfix list, without even n
 
 I've mapped the `+` and `-` keys to `:cnext` and `:cprevious`, for skipping one item at the time. I've mapped `g+` and `g-` to `:cpfile` and `:cnfile`, for skipping one *file* at the time.
 
-Some of my favorite commands to do with the quickfix list are `:colder` and `:cnewer`, to revisit the previous or next item list. This means you can run one project search for "foo", notice some issue with bars, search for "bar", do stuff, then run `:colder` and you're back in the "foo" search. It's effectively a stack of project searches to pop and push at leisure.
+Some of my favorite commands for the quickfix list are `:colder` and `:cnewer`, to revisit the previous or next item list. This means you can run one project search for "foo", notice some issue with bars, search for "bar", do stuff, then run `:colder` and you're back in the "foo" search. It's effectively a stack of project searches to pop and push at leisure.
 
 
 ## Qdo
 
-Vim has a couple of commands like `:bufdo` and `:windo`, which let you run a command in every open buffer or window. Drew Neil (of [Vimcasts](http://vimcasts.org/) and [Practical Vim](http://pragprog.com/book/dnvim/practical-vim)) with other contributors [wrote a `:Qargdo`](http://stackoverflow.com/a/5686810/6962) for when you want to run a command against every file in the quickfix list.
+Vim has a couple of commands like `:bufdo` and `:windo`, which let you run a command in every open buffer or window. Drew Neil (of [Vimcasts](http://vimcasts.org/) and [Practical Vim](http://pragprog.com/book/dnvim/practical-vim)) with other contributors [wrote a :Qargdo](http://stackoverflow.com/a/5686810/6962) for when you want to run a command against every file in the quickfix list.
 
 [My fork of vim-qargs](https://github.com/henrik/vim-qargs) uses the conveniently short `:Qdo` for the same.
 
 For project-wide search-and-replace, then, you would simply do something like this:
 
-{% highlight vim %}
+{% highlight text %}
 :GitGrep foo.*bar
 :Qdo %s/foo.*bar/baz
 {% endhighlight %}
