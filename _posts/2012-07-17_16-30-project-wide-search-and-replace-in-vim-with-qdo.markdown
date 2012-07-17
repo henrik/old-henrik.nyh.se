@@ -5,7 +5,7 @@ tags:  [Vim]
 
 In [my blog post about switching to Vim](/2011/01/textmate-to-vim-with-training-wheels), I mentioned that I had yet to find a project-wide search-and-replace solution that I like.
 
-But now I have: I use [git-grep-vim](https://github.com/henrik/git-grep-vim) for project-wide search, then [vim-qargs](https://github.com/henrik/vim-qargs) to run a vim search-and-replace command over every result file.
+Now I have: I use [git-grep-vim](https://github.com/henrik/git-grep-vim) for project-wide search, then [vim-qargs](https://github.com/henrik/vim-qargs) to run a vim search-and-replace command over every result file.
 
 
 ## Less convenience, more power
@@ -50,7 +50,7 @@ Add the results of a new search to the existing result list:
 
 With multiple words or some special characters, quote the search string:
 
-{% highlight vim %}
+{% highlight text %}
 :GitGrep "hello there"
 {% endhighlight %}
 
