@@ -131,7 +131,7 @@ let g:turbux_command_rspec = 'rspec --drb'
 
 That's it. As long as you have a Spork running, your Turbux test runs will use it.
 
-It's kind of nice to have Spork separate from your test runner. If you introduce an endless loop and a test hangs, just kill the test and run it again when the issue has been fixed. The app will remain loaded in Spork. If you make changes that require Spork to restart, just restart it. If you make many such changes and Spork gets in the way (as it will sometimes, with Guard), just kill Spork and keep running the tests without it.
+It's kind of nice to have Spork separate from your test runner. If you introduce an endless loop and a test hangs, just kill the test and run it again when the issue has been fixed. The app will remain loaded in Spork. If you make changes that require Spork to restart, just restart it. If you make many such changes and Spork gets in the way, just kill Spork and keep running the tests without it. With Guard::Spork, your test running and your test server are tied together.
 
 Guard::Spork does offer the convenience of reloading Spork automatically when necessary, like when you modify `environment.rb`. It's not something I've been missing, though. It's easy enough to restart Spork yourself when you need to.
 
