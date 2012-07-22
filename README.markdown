@@ -1,3 +1,7 @@
+# This repo has been abandoned!
+
+[Please see my new blog repo.](http://github.com/henrik/octopress)
+
 # The Pug Automatic
 
 This directory contains data for my blog, [The Pug Automatic](http://henrik.nyh.se).
